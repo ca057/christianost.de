@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto Mono', Consolas, "Lucida Console", Monaco, monospace;
+    font-weight: normal;
+    background-color: #FFFFFF;
+    color: #212121;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:link {
+    color: #212121;
+    text-decoration:none;
+}
+
+a:visited {
+    color: #212121;
+    text-decoration:none;
+}
+
+a:focus {
+    color: #212121;
+    text-decoration:none;
+    border-bottom: 2px solid #212121;
+}
+
+a:hover {
+    color: #212121;
+    text-decoration:none;
+    border-bottom: 2px solid #212121;
+}
+
+a:active {
+    color: #212121;
+    text-decoration: none;
+    border-bottom: 2px solid #212121;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 12vw;
+}
+
+p {
+    color: #212121;
+}
+
+div#wrapper {
+    padding: 5px;
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li::after {
+    content: " -- ";
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li:last-child::after {
+    content: "";
+}
+
+.icon {
+    height: 32px;
+    vertical-align: -10%;
+}
+
+.full-width-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
