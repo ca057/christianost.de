@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
     border: 0;
     box-sizing: border-box;
 }
@@ -47,8 +48,9 @@ a:active {
 
 h1 {
     display: inline-block;
+    width: auto;
     font-weight: 300;
-    font-size: 11vw;
+    font-size: 12vw;
 }
 
 p {
