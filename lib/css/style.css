@@ -50,7 +50,7 @@ h1 {
     display: inline-block;
     width: auto;
     font-weight: 300;
-    font-size: 12vw;
+    font-size: 11vw;
 }
 
 p {
@@ -62,27 +62,8 @@ div#wrapper {
     width: 100%;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    font-size: 32px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li::after {
-    content: " -- ";
-    font-size: 32px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li:last-child::after {
-    content: "";
+header {
+    text-align: center;
 }
 
 .icon {
