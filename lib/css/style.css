@@ -46,18 +46,22 @@ a:active {
     border-bottom: 2px solid #212121;
 }
 
-h1 {
+h1#title {
     font-weight: 300;
     font-size: 12.5vw;
 }
 
-h2 {
+h1 {
     font-weight: 300;
-    font-size: 5vw;
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 2.5em;
 }
 
 p {
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom: 0.5em;
 }
 
@@ -78,8 +82,8 @@ p:last-of-type {
     display: none;
 }
 
-div#wrapper {
-    padding: 5px;
+div.wrapper, div.main {
+    padding: 15px 5px 15px 5px;
     width: 50%;
     height: 100%;
     margin: 0 auto 0 auto;
@@ -91,21 +95,17 @@ div#wrapper {
     align-items: center;
 }
 
-div#wrapper-main {
-    padding: 5px;
+div.main {
     width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    margin: 0;
 }
 
 header {
     width: 100%;
     text-align: center;
+}
+
+section {
 }
 
 nav {
@@ -130,25 +130,100 @@ nav ul li a {
 }
 
 @media screen and (max-width: 1000px) {
-    div#wrapper {
+    div.wrapper {
         width: 60%;
+    }
+
+    div.main {
+        width: 100%;
+    }
+
+    p, nav {
+        font-size: 1.6em;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    p, nav {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2.1em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    p, nav {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
     }
 }
 
 @media screen and (max-width: 700px) {
-    div#wrapper {
+    div.wrapper {
         width: 75%;
     }
-}
 
-@media screen and (max-width: 450px) {
-    div#wrapper {
-        width: 85%;
+    div.main {
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        font-size: 1.7em;
     }
 }
 
-@media screen and (max-width: 300px) {
-    div#wrapper {
+@media screen and (max-width: 600px) {
+    div.wrapper {
+        width: 80%;
+    }
+
+    div.main {
+        width: 100%;
+    }
+
+    p, nav {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    div.wrapper {
+        width: 85%;
+    }
+
+    div.main {
+        width: 100%;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    div.wrapper {
         width: 95%;
+    }
+
+    div.main {
+        width: 100%;
     }
 }
