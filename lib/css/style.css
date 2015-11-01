@@ -78,6 +78,7 @@ h2 {
 
 p {
     font-size: 1.5em;
+    line-height: 150%;
     margin-bottom: 0.5em;
 }
 
@@ -94,6 +95,10 @@ p:last-of-type {
     width: auto;
 }
 
+.hide {
+    display: none;
+}
+
 *[data-lang="de"] {
     display: inline-block;
 }
@@ -102,12 +107,23 @@ p:last-of-type {
     display: none;
 }
 
-.internal-link {
+button.no-button-style {
+    border: none;
+    outline: none;
+    background: inherit;
+    font: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+button.internal-link {
     cursor: pointer;
     border-bottom: 2px dashed #212121;
 }
 
-.internal-link:hover {
+button.internal-link:hover {
     border-bottom: 2px dashed #FFFFFF;
 }
 
