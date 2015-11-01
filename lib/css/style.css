@@ -16,33 +16,48 @@ html, body {
 
 a {
     cursor: pointer;
+    border-bottom: 2px solid #212121;
 }
 
 a:link {
     color: #212121;
     text-decoration:none;
+    border-bottom: 2px solid #212121;
 }
 
 a:visited {
     color: #212121;
     text-decoration:none;
+    border-bottom: 2px solid #212121;
 }
 
 a:focus {
     color: #212121;
     text-decoration:none;
-    border-bottom: 2px solid #212121;
+    border-bottom: 2px solid #FFFFFF;
 }
 
 a:hover {
     color: #212121;
     text-decoration:none;
-    border-bottom: 2px solid #212121;
+    border-bottom: 2px solid #FFFFFF;
 }
 
 a:active {
     color: #212121;
     text-decoration: none;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+a.borderinverted {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+a.borderinverted:link, a.borderinverted:visited {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+a.borderinverted:focus, a.borderinverted:hover, a.borderinverted:active {
     border-bottom: 2px solid #212121;
 }
 
@@ -57,12 +72,17 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
 p {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin-bottom: 0.5em;
+}
+
+p.key {
+    font-size: 0.9em;
 }
 
 p:last-of-type {
@@ -85,7 +105,7 @@ p:last-of-type {
 div.wrapper, div.main {
     padding: 15px 5px 15px 5px;
     width: 50%;
-    height: 100%;
+    min-height: 100%;
     margin: 0 auto 0 auto;
 
     display: flex;
@@ -106,10 +126,12 @@ header {
 }
 
 section {
+    width: 100%;
 }
 
 nav {
-    font-size: 2em;
+    margin-top: 15px;
+    font-size: 1.5em;
 }
 
 nav ul {
@@ -129,6 +151,12 @@ nav ul li a {
     vertical-align: -10%;
 }
 
+@media screen and (max-width: 1100px) {
+    p.key {
+        font-size: 0.8em;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     div.wrapper {
         width: 60%;
@@ -138,29 +166,14 @@ nav ul li a {
         width: 100%;
     }
 
-    p, nav {
-        font-size: 1.6em;
-    }
-
-}
-
-@media screen and (max-width: 850px) {
-    p, nav {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 2.1em;
+    p.key {
+        font-size: 0.7em;
     }
 }
 
-@media screen and (max-width: 750px) {
-    p, nav {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 2em;
+@media screen and (max-width: 800px) {
+    p.key {
+        font-size: 0.6em;
     }
 }
 
@@ -174,7 +187,7 @@ nav ul li a {
     }
 
     p {
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     h2 {
@@ -192,8 +205,13 @@ nav ul li a {
     }
 
     p, nav {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
+
+    p.key {
+        font-size: 0.6em;
+    }
+
 
     h2 {
         font-size: 1.4em;
@@ -211,6 +229,10 @@ nav ul li a {
 
     p {
         font-size: 1em;
+    }
+
+    p.key {
+        font-size: 0.5em;
     }
 
     h2 {
