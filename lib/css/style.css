@@ -102,6 +102,15 @@ p:last-of-type {
     display: none;
 }
 
+.internal-link {
+    cursor: pointer;
+    border-bottom: 2px dashed #212121;
+}
+
+.internal-link:hover {
+    border-bottom: 2px dashed #FFFFFF;
+}
+
 div.wrapper, div.main {
     padding: 15px 5px 15px 5px;
     width: 50%;
