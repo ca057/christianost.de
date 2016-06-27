@@ -8,45 +8,56 @@ html, body {
   width: 100%;
   font-family: 'Roboto', sans-serif;
   color: #212121;
-}
-a, p {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 h1 {
-  font-size: 2.5em;
+  font-size: 2.0em;
 }
 h2 {
-  font-size: 1.6em;
+  font-size: 1.5em;
+  margin: 1.5em 0 0.5em 0;
 }
 a {
   color: #212121;
   cursor: pointer;
+  text-decoration: none;
   border-bottom: 1px solid #FFFFFF;
 }
 a:link {
-  color: #212121;
-  text-decoration:none;
   border-bottom: 1px solid #FFFFFF;
 }
 a:visited {
-  color: #212121;
-  text-decoration:none;
   border-bottom: 1px solid #FFFFFF;
 }
 a:focus {
-  color: #212121;
-  text-decoration:none;
   border-bottom: 1px solid #212121;
 }
 a:hover {
-  color: #212121;
-  text-decoration:none;
   border-bottom: 1px solid #212121;
 }
 a:active {
+  border-bottom: 1px solid #212121;
+}
+.text a {
   color: #212121;
+  cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid #212121;
+}
+.text a:link {
+  border-bottom: 1px solid #212121;
+}
+.text a:visited {
+  border-bottom: 1px solid #212121;
+}
+.text a:focus {
+  border-bottom: 1px solid #FFFFFF;
+}
+.text a:hover {
+  border-bottom: 1px solid #FFFFFF;
+}
+.text a:active {
+  border-bottom: 1px solid #FFFFFF;
 }
 .page {
   height: 100vh;
@@ -71,7 +82,11 @@ a:active {
       -ms-flex-align: center;
           align-items: center;
 }
-
+.text {
+  max-width: 800px;
+  margin: 0 auto 0 auto;
+  padding: 0.5em;
+}
 .row {
   display: flex;
   flex-direction: row;
@@ -109,4 +124,24 @@ nav {
 .icon {
   height: 1em;
   cursor: pointer;
+}
+
+.cv {
+  width: 100%;
+}
+
+.cv table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+
+.cv td {
+  padding: 0 0 0 10px;
+  vertical-align: top;
+}
+
+.cv td:first-child {
+  width: 33%;
+  padding-left: 0;
 }
