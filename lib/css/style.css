@@ -138,22 +138,21 @@ footer {
   height: 1em;
   cursor: pointer;
 }
-
+.icon-h1 {
+  height: 2em;
+}
 .cv {
   width: 100%;
 }
-
 .cv table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 1em;
 }
-
 .cv td {
   padding: 0 0 0 10px;
   vertical-align: top;
 }
-
 .cv td:first-child {
   width: 33%;
   padding-left: 0;
@@ -177,11 +176,9 @@ footer {
       -ms-flex-align: center;
           align-items: center;
 }
-
 #profile-image {
   max-width: 100%;
 }
-
 @media (min-width: 500px) {
   #profile-image-container {
     display: block;
