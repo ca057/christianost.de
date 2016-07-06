@@ -88,8 +88,18 @@ a:active {
   padding: 0.5em;
 }
 .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+section {
+  width: 100%;
 }
 header {
   width: 100%;
@@ -118,6 +128,9 @@ nav {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 }
+footer {
+  margin: 1em;
+}
 .links {
   margin: 0.5em;
 }
@@ -144,4 +157,36 @@ nav {
 .cv td:first-child {
   width: 33%;
   padding-left: 0;
+}
+#profile-image-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#profile-image {
+  max-width: 100%;
+}
+
+@media (min-width: 500px) {
+  #profile-image-container {
+    display: block;
+  }
+  #profile-image {
+    margin-left: 33%;
+  }
 }
