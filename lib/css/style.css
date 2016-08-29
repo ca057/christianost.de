@@ -9,7 +9,6 @@ html, body {
   font-family: 'Raleway', sans-serif;
   color: #212121;
   font-size: 1em;
-  background-color: #FFD54F;
 }
 h1 {
   font-family: 'Playfair Display', serif;
@@ -17,6 +16,8 @@ h1 {
   font-size: 3em;
 }
 h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
   font-size: 1.5em;
   margin: 1.5em 0 0.5em 0;
 }
@@ -24,21 +25,42 @@ a {
   color: #212121;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 1px solid #FFD54F;
+  border-bottom: 1px solid #212121;
 }
 a:link {
-  border-bottom: 1px solid #FFD54F;
+  border-bottom: 1px solid #212121;
 }
 a:visited {
-  border-bottom: 1px solid #FFD54F;
+  border-bottom: 1px solid #212121;
 }
 a:focus {
-  border-bottom: 1px solid #212121;
+  border-bottom: none;
 }
 a:hover {
-  border-bottom: 1px solid #212121;
+  border-bottom: none;
 }
 a:active {
+  border-bottom: none;
+}
+nav a {
+  color: #212121;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid #FFD54F;
+}
+nav a:link {
+  border-bottom: 1px solid #FFD54F;
+}
+nav a:visited {
+  border-bottom: 1px solid #FFD54F;
+}
+nav a:focus {
+  border-bottom: 1px solid #212121;
+}
+nav a:hover {
+  border-bottom: 1px solid #212121;
+}
+nav a:active {
   border-bottom: 1px solid #212121;
 }
 .page {
@@ -46,6 +68,7 @@ a:active {
   width: 100vw;
 }
 .main {
+  background-color: #FFD54F;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,6 +102,9 @@ a:active {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+.white-bg {
+  background-color: #FFFFFF;
 }
 section {
   width: 100%;
