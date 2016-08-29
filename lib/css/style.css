@@ -6,12 +6,15 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #212121;
   font-size: 1em;
+  background-color: #FFD54F;
 }
 h1 {
-  font-size: 2.0em;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-size: 3em;
 }
 h2 {
   font-size: 1.5em;
@@ -21,13 +24,13 @@ a {
   color: #212121;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFD54F;
 }
 a:link {
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFD54F;
 }
 a:visited {
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFD54F;
 }
 a:focus {
   border-bottom: 1px solid #212121;
@@ -37,27 +40,6 @@ a:hover {
 }
 a:active {
   border-bottom: 1px solid #212121;
-}
-.text a {
-  color: #212121;
-  cursor: pointer;
-  text-decoration: none;
-  border-bottom: 1px solid #212121;
-}
-.text a:link {
-  border-bottom: 1px solid #212121;
-}
-.text a:visited {
-  border-bottom: 1px solid #212121;
-}
-.text a:focus {
-  border-bottom: 1px solid #FFFFFF;
-}
-.text a:hover {
-  border-bottom: 1px solid #FFFFFF;
-}
-.text a:active {
-  border-bottom: 1px solid #FFFFFF;
 }
 .page {
   height: 100vh;
