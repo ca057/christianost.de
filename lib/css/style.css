@@ -63,9 +63,13 @@ nav a:hover {
 nav a:active {
   border-bottom: 1px solid #212121;
 }
+a svg {
+  height: 1em;
+  cursor: pointer;
+}
 .page {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100%;
 }
 .main {
   background-color: #FFD54F;
@@ -117,6 +121,9 @@ header {
 header > * {
   margin: 0.2em;
 }
+header svg {
+  height: 2em;
+}
 nav {
   width: 100%;
   display: -webkit-box;
@@ -141,13 +148,6 @@ footer {
 }
 .links {
   margin: 0.5em;
-}
-.icon {
-  height: 1em;
-  cursor: pointer;
-}
-.icon-h1 {
-  height: 2em;
 }
 .cv {
   width: 100%;
