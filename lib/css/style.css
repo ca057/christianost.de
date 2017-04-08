@@ -189,6 +189,7 @@ footer {
 }
 .hint {
   color: #525252;
+  border-color: #525252 !important;
   font-size: 75%;
   font-weight: lighter;
 }
