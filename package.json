@@ -1,0 +1,13 @@
+{
+  "name": "christianost.de",
+  "version": "1.0.0",
+  "description": "Code for my awesome online portfolio",
+  "main": "",
+  "repository": "git@github.com:ca057/christianost.de.git",
+  "author": "Christian Ost <christian@christianost.de>",
+  "license": "BSD3",
+  "private": true,
+  "devDependencies": {
+    "pug": "^2.0.0-rc.4"
+  }
+}
