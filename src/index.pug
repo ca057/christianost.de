@@ -1,5 +1,12 @@
 extends ./base.pug
 
 block content
-  h1 Christian Ost
+  h1(class="header") Christian Ost
+    
+  p Frontend developer from Bamberg, Germany.
   p(id="rand-attribute") Awesome all day.
+    
+  div(class="contacts")
+    ul
+      each val in [1, 2, 3]
+        li= val

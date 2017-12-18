@@ -11,5 +11,6 @@ watch:
 
 compile/dev: src
 	rm -rf build/**
-	pug -P src -o build
+	./node_modules/.bin/pug -P src -o build
+	./node_modules/.bin/postcss src/**/*.css -o build/styles.css
 	@$(clean_up_build)

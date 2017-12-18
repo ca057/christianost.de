@@ -19,22 +19,27 @@ body {
   font-family: monospace;
 }
 
-h2 {
+h1 {
   font-size: 2em;
+  line-height: 2.2em;
 }
 
 p {
   font-size: 1em;
+  line-height: 1.5em;
 }
 
 main {
-  background-color: greenyellow;
-  width: 75%;
+  width: 75vw;
   max-width: 50rem;
-  height: 100%;
+  height: 100vh;
   margin: 0 1rem;
   padding: 1rem 0;
   font-size: 1rem;
+}
+
+.header {
+  margin-top: 25vh;
 }
 
 @media screen and (min-width: 900px) {

@@ -7,7 +7,15 @@
   "author": "Christian Ost <christian@christianost.de>",
   "license": "BSD3",
   "private": true,
+  "scripts": {
+    "compile:pug:dev": "pug -P src -o build",
+    "compile:css:dev": ""
+  },
   "devDependencies": {
-    "pug": "^2.0.0-rc.4"
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
