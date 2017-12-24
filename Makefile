@@ -8,6 +8,10 @@ clean: build
 	rm -rf build
 
 compile/dev: src
-	rm -rf build/**
 	./node_modules/.bin/pug -P src -o build -b layouts
 	./node_modules/.bin/postcss src/**/*.css -o build/styles.css
+
+start/dev: src
+	mkdir build || true
+	make watch WATCHMAKE=compile/dev &
+	cd build && python3 -m http.server
