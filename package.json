@@ -8,7 +8,10 @@
   "license": "BSD3",
   "private": true,
   "scripts": {
-    "compile": "pug"
+    "server": "mkdir build || :; cd build && python3 -m http.server",
+    "compile:pug": "pug -P src -o build -b layouts -w",
+    "compile:css": "postcss src/**/*.css -o build/styles.css -w",
+    "start": "npm run compile:pug & npm run compile:css & npm run server"
   },
   "devDependencies": {
     "postcss": "^6.0.14",
