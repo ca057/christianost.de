@@ -7,6 +7,9 @@
   "author": "Christian Ost <christian@christianost.de>",
   "license": "BSD3",
   "private": true,
+  "scripts": {
+    "compile": "pug"
+  },
   "devDependencies": {
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
