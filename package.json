@@ -13,7 +13,9 @@
     "compile:css": "postcss src/**/*.css -o build/styles.css -w",
     "create:assets": "cp -pr assets build/. && echo FIXME",
     "start": "npm run compile:pug & npm run compile:css & npm run server",
-    "lint": "eslint src/**/*.js",
+    "lint:js": "eslint src/**/*.js",
+    "lint:css": "stylelint src/**/*.css",
+    "lint": "yarn run lint:js && yarn run lint:css",
     "test": "yarn run lint"
   },
   "devDependencies": {
@@ -25,6 +27,8 @@
     "postcss-cli": "^4.1.1",
     "postcss-cssnext": "^3.0.2",
     "pug": "^2.0.0-rc.4",
-    "pug-cli": "^1.0.0-alpha6"
+    "pug-cli": "^1.0.0-alpha6",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^2.0.1"
   }
 }
