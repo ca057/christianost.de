@@ -33,13 +33,25 @@ main {
   width: 75vw;
   max-width: 50rem;
   height: 100vh;
-  margin: 0 1rem;
+  margin: 25vh 1rem 0;
   padding: 1rem 0;
   font-size: 1rem;
 }
 
-.header {
-  margin-top: 25vh;
+.list--noStyle {
+  list-style: none;
+}
+
+.emoji__container {
+  width: 5rem;
+  height: 5rem;
+  background-position: center;
+  background-size: cover;
+}
+
+.emoji__container--initial {
+  border-radius: 50%;
+  background-color: gray;
 }
 
 @media screen and (min-width: 900px) {

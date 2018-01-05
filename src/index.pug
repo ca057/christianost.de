@@ -1,12 +1,18 @@
 extends /base.pug
 
 block content
+  div(class="emoji__container")
+
   h1(class="header") Christian Ost
     
-  p Frontend developer from Bamberg, Germany, currently working for PROXIPEDIA.
-    
+  p Frontend developer one half of the day. Runner, boulderer, beer drinker the other half.
+
   div(class="contacts")
-    ul
-      each val in [1, 2, 3]
-        li= val
-        
+    ul(class="list--noStyle")
+      li Github
+      li Mail
+      li PGP Key
+      li Twitter
+
+  script
+    include index.js

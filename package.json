@@ -11,9 +11,16 @@
     "server": "mkdir build || :; cd build && python3 -m http.server",
     "compile:pug": "pug -P src -o build -b layouts -w",
     "compile:css": "postcss src/**/*.css -o build/styles.css -w",
-    "start": "npm run compile:pug & npm run compile:css & npm run server"
+    "create:assets": "cp -pr assets build/. && echo FIXME",
+    "start": "npm run compile:pug & npm run compile:css & npm run server",
+    "lint": "eslint src/**/*.js",
+    "test": "yarn run lint"
   },
   "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
     "postcss-cssnext": "^3.0.2",
