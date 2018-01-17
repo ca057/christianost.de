@@ -1,6 +1,9 @@
 const locals = require('./locals');
 
 module.exports = {
+  paths: {
+    watched: ['app'],
+  },
   files: {
     javascripts: {
       joinTo: {
