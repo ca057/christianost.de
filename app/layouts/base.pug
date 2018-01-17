@@ -1,5 +1,6 @@
 html
   block head
+    include /head.pug
     block styles
       link(href="app.css", rel="stylesheet")
   
@@ -8,3 +9,5 @@ body
     block content
 
   script(src="app.js")
+  script.
+    require('index.js')

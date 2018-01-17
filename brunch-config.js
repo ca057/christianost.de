@@ -5,13 +5,20 @@ module.exports = {
     javascripts: {
       joinTo: {
         'vendor.js': /^(?!app)/, // Files that are not in `app` dir.
-        'app.js': /^app/,
+        'app.js': 'app/**/*.js',
       },
     },
     stylesheets: { joinTo: 'app.css' },
   },
   plugins: {
-    pug: { locals },
+    pug: {
+      locals,
+      basedir: 'app/layouts',
+      staticBasedir: 'app/layouts',
+      pugRuntime: false,
+      preCompile: true,
+      preCompilePattern: /\.pug$/,
+    },
     babel: { presets: ['latest'] },
   },
 };
