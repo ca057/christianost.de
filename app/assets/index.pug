@@ -1,10 +1,19 @@
-html
-  block head
-    include head.pug
-    block styles
-      link(href="styles.css", rel="stylesheet")
-  
-  body
-    main
-      block content
-      p Hello
+extends ./../layouts/base.pug
+
+block content
+  div(class="emoji__container")
+
+  h1(class="header") Christian Ost
+    
+  p Frontend developer one half of the day. Runner, boulderer, beer drinker the other half.
+
+  div(class="contacts")
+    ul(class="list--noStyle")
+      li Github
+      li Mail
+      li PGP Key
+      li keybase
+      li Twitter
+      
+  script
+    include ./../index.js
