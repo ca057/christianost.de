@@ -1,5 +1,5 @@
 const EMOJI_NAMES = {
-  working: ['robot', 'nerd', 'computer'],
+  working: ['robot', 'computer'],
   downtime: ['beer', 'climbing', 'coffee', 'running'],
 };
 
@@ -26,7 +26,7 @@ function setEmoji(time) {
 
   document.getElementsByClassName(
     'emoji__container'
-  )[0].style.backgroundImage = `url('assets/svg/${emojiName}.png')`;
+  )[0].style.backgroundImage = `url('svg/${emojiName}.png')`;
 
   lastInterval = setInterval(() => {
     clearInterval(lastInterval);
@@ -35,3 +35,10 @@ function setEmoji(time) {
 }
 
 setEmoji(new Date());
+
+document.addEventListener('DOMContentLoaded', () => {
+  // do your setup here
+  console.log('Initialized app');
+});
+
+console.log('Initialized app');
