@@ -1,21 +1,35 @@
 {
-  "name": "brunch-app",
-  "description": "Brunch.io application",
+  "name": "christianost.de",
+  "version": "1.0.0",
+  "description": "Code for my awesome online portfolio",
+  "main": "",
+  "repository": "git@github.com:ca057/christianost.de.git",
+  "author": "Christian Ost <christian@christianost.de>",
+  "license": "BSD3",
   "private": true,
-  "author": "Brunch",
-  "version": "0.0.1",
-  "repository": "",
   "scripts": {
+    "lint:js": "eslint src/**/*.js",
+    "lint:css": "stylelint src/**/*.css",
+    "lint": "yarn run lint:js && yarn run lint:css",
+    "test": "yarn run lint",
     "start": "brunch watch --server",
     "build": "brunch build --production"
   },
-  "dependencies": {},
   "devDependencies": {
     "auto-reload-brunch": "^2",
     "babel-brunch": "~6.0",
     "babel-preset-latest": "^6",
     "brunch": "^2",
     "clean-css-brunch": "^2",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^2.0.1",
     "uglify-js-brunch": "^2"
   }
 }
