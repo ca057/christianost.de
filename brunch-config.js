@@ -1,3 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+const htmlBrunchStatic = require('html-brunch-static');
+const pugBrunchStatic = require('pug-brunch-static');
+
 const locals = require('./locals');
 
 module.exports = {
@@ -14,14 +18,19 @@ module.exports = {
     stylesheets: { joinTo: 'app.css' },
   },
   plugins: {
-    pug: {
-      locals,
-      basedir: 'app/layouts',
-      staticBasedir: 'app/layouts',
-      pugRuntime: false,
-      preCompile: true,
-      preCompilePattern: /\.pug$/,
+    static: {
+      processors: [
+        htmlBrunchStatic({
+          processors: [
+            pugBrunchStatic({
+              fileMatch: 'app/**/*.pug',
+              fileTransform: filename => filename.replace(/\.pug$/, '.html'),
+              basedir: 'app',
+            }),
+          ],
+        }),
+      ],
+      babel: { presets: ['latest'] },
     },
-    babel: { presets: ['latest'] },
   },
 };
