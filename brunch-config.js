@@ -1,8 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const htmlBrunchStatic = require('html-brunch-static');
 const pugBrunchStatic = require('pug-brunch-static');
-
-const locals = require('./locals');
+const postCssCssNext = require('postcss-cssnext');
 
 module.exports = {
   paths: {
@@ -30,7 +29,10 @@ module.exports = {
           ],
         }),
       ],
-      babel: { presets: ['latest'] },
+    },
+    babel: { presets: ['latest'] },
+    postcss: {
+      processors: [postCssCssNext],
     },
   },
 };
