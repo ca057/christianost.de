@@ -69,10 +69,17 @@ a:active {
 main {
   width: 75vw;
   max-width: 50rem;
-  height: 100vh;
-  margin: 25vh 1rem 0;
+  margin: 25vh 1rem auto;
   padding: 1rem 0;
   font-size: 1rem;
+}
+
+footer {
+  margin-top: var(--spacing-double);
+
+  & p {
+    font-size: 1rem;
+  }
 }
 
 .list--noStyle {
