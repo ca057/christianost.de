@@ -78,7 +78,7 @@ footer {
   margin-top: var(--spacing-double);
 
   & p {
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 }
 
