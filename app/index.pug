@@ -5,6 +5,13 @@ block content
 
   h1(class="header") Christian Ost
     
-  p Software developer from Bamberg, working as frontend developer for PROXIPEDIA.
+  p Software developer from Bamberg, working as frontend developer for #[a(href="https://proxipedia.io", title="PROXIPEDIA") PROXIPEDIA].
+
+  p Get in contact with me:
   
   include partials/contacts.pug
+
+block scripts
+  script(src="app.js")
+  script.
+    require('index.js')

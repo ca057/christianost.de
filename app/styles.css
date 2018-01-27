@@ -30,7 +30,11 @@ body {
 h1 {
   font-size: 2rem;
   line-height: 2.2rem;
-  margin: var(--spacing) 0 var(--spacing);
+  margin: var(--spacing) 0;
+}
+
+h2 {
+  margin: var(--spacing) 0;
 }
 
 p {
@@ -78,7 +82,7 @@ footer {
   margin-top: var(--spacing-double);
 
   & p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -110,11 +114,5 @@ footer {
 @media screen and (min-width: 900px) {
   html {
     font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  html {
-    font-size: 20px;
   }
 }
