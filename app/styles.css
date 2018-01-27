@@ -1,0 +1,117 @@
+:root {
+  --color-text: #212121;
+  --spacing-half: 0.5rem;
+  --spacing: 1rem;
+  --spacing-double: 2rem;
+}
+
+/* TODO get better CSS-reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 16px/1.2 BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  margin: var(--spacing) 0;
+  font-family: monospace;
+}
+
+h2 {
+  margin: var(--spacing) 0;
+  font-family: monospace;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+a {
+  color: var(--color-text);
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-text);
+}
+
+a:link {
+  border-bottom: 1px solid var(--color-text);
+}
+
+a:visited {
+  border-bottom: 1px solid var(--color-text);
+}
+
+a:focus {
+  border-bottom: none;
+}
+
+a:hover {
+  border-bottom: none;
+}
+
+a:active {
+  border-bottom: none;
+}
+
+main {
+  width: 75vw;
+  max-width: 50rem;
+  margin: 25vh 1rem auto;
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: var(--spacing-double);
+
+  & p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    margin-bottom: calc(var(--spacing-half) / 2);
+  }
+}
+
+.list--noStyle {
+  list-style: none;
+}
+
+.list--vertical > li {
+  display: inline;
+  margin-right: var(--spacing-half);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.emoji__container {
+  width: 5rem;
+  height: 5rem;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 18px;
+  }
+}
