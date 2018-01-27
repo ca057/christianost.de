@@ -16,14 +16,13 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-size: 16px;
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font: 16px/1.2 BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: var(--color-text);
 }
@@ -109,11 +108,6 @@ footer {
   height: 5rem;
   background-position: center;
   background-size: cover;
-}
-
-.emoji__container--initial {
-  border-radius: 50%;
-  background-color: gray;
 }
 
 @media screen and (min-width: 900px) {
