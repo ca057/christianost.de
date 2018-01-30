@@ -3,6 +3,8 @@
   --spacing-half: 0.5rem;
   --spacing: 1rem;
   --spacing-double: 2rem;
+  --font-monospace: Menlo, Monaco, 'Roboto Mono', 'DejaVu Sans Mono',
+    'Ubuntu Mono', 'Segoe UI Mono', 'Liberation Mono', monospace;
 }
 
 /* TODO get better CSS-reset */
@@ -31,12 +33,12 @@ h1 {
   font-size: 2rem;
   line-height: 2.2rem;
   margin: var(--spacing) 0;
-  font-family: monospace;
+  font-family: var(--font-monospace);
 }
 
 h2 {
   margin: var(--spacing) 0;
-  font-family: monospace;
+  font-family: var(--font-monospace);
 }
 
 p {
