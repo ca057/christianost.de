@@ -1,5 +1,6 @@
 :root {
   --color-text: #212121;
+  --spacing-quarter: 0.25rem;
   --spacing-half: 0.5rem;
   --spacing: 1rem;
   --spacing-double: 2rem;
@@ -7,7 +8,6 @@
     'Ubuntu Mono', 'Segoe UI Mono', 'Liberation Mono', monospace;
 }
 
-/* TODO get better CSS-reset */
 * {
   margin: 0;
   padding: 0;
@@ -48,12 +48,6 @@ p {
   margin-bottom: var(--spacing-half);
 }
 
-.large {
-  font-size: 5rem;
-
-  line-height: 5rem;
-}
-
 li {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -64,6 +58,32 @@ a {
   cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid var(--color-text);
+}
+
+main {
+  width: 75vw;
+  max-width: 50rem;
+  margin: 25vh 1rem auto;
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: var(--spacing-double);
+}
+
+footer,
+footer * {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  text-align: center;
+  margin-bottom: var(--spacing-quarter);
+}
+
+.large {
+  font-size: 5rem;
+
+  line-height: 5rem;
 }
 
 a:link {
@@ -86,25 +106,6 @@ a:active {
   border-bottom: none;
 }
 
-main {
-  width: 75vw;
-  max-width: 50rem;
-  margin: 25vh 1rem auto;
-  padding: 1rem 0;
-  font-size: 1rem;
-}
-
-footer {
-  margin-top: var(--spacing-double);
-
-  & p {
-    font-size: 0.7rem;
-    line-height: 1rem;
-    margin-bottom: calc(var(--spacing-half) / 2);
-    text-align: center;
-  }
-}
-
 .list--noStyle {
   list-style: none;
 }
@@ -116,13 +117,6 @@ footer {
   &:last-child {
     margin-right: 0;
   }
-}
-
-.emoji__container {
-  width: 5rem;
-  height: 5rem;
-  background-position: center;
-  background-size: cover;
 }
 
 @media screen and (min-width: 900px) {
