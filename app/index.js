@@ -1,13 +1,11 @@
-const EMOJI_NAMES = {
-  working: ['robot', 'computer'],
-  downtime: ['beer', 'climbing', 'coffee', 'running'],
+const EMOJIS = {
+  working: ['🤖', '💻', '👨‍💻'],
+  downtime: ['🍻', '🧗', '☕', '🏃', '👻'],
 };
 
-function getRandomEmojiName(currentHour) {
+function getRandomEmoji(emojis, currentHour) {
   const list =
-    currentHour >= 7 && currentHour <= 18
-      ? EMOJI_NAMES.working
-      : EMOJI_NAMES.downtime;
+    currentHour >= 7 && currentHour <= 18 ? emojis.working : emojis.downtime;
 
   return list[Math.round(Math.random() * 10) % list.length];
 }
@@ -21,17 +19,16 @@ function getCurrentHour(date) {
 }
 
 let lastInterval;
-function setEmoji(time) {
-  const emojiName = getRandomEmojiName(getCurrentHour(time || new Date()));
-
-  document.getElementsByClassName(
-    'emoji__container'
-  )[0].style.backgroundImage = `url('svg/${emojiName}.png')`;
+function replaceWithEmoji(selector, time) {
+  document.getElementById(selector).innerText = `${getRandomEmoji(
+    EMOJIS,
+    getCurrentHour(time || new Date())
+  )}`;
 
   lastInterval = setInterval(() => {
     clearInterval(lastInterval);
-    setEmoji(new Date());
+    replaceWithEmoji(new Date());
   }, 3600000);
 }
 
-setEmoji(new Date());
+replaceWithEmoji('emoji', new Date());
