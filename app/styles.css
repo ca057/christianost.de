@@ -1,13 +1,16 @@
 :root {
   --color-text: #212121;
-  --spacing-half: 0.5rem;
+  --spacing-quarter: calc(var(--spacing) / 4);
+  --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
-  --spacing-double: 2rem;
+  --spacing-double: calc(var(--spacing) * 2);
   --font-monospace: Menlo, Monaco, 'Roboto Mono', 'DejaVu Sans Mono',
     'Ubuntu Mono', 'Segoe UI Mono', 'Liberation Mono', monospace;
+  --font-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+    Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    'Helvetica Neue', sans-serif;
 }
 
-/* TODO get better CSS-reset */
 * {
   margin: 0;
   padding: 0;
@@ -24,8 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font: 16px/1.2 BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font: 16px/1.2 var(--font-sans-serif);
   color: var(--color-text);
 }
 
@@ -41,15 +43,29 @@ h2 {
   font-family: var(--font-monospace);
 }
 
+h3 {
+  margin: var(--spacing-half) 0;
+  font-family: var(--font-sans-serif);
+}
+
+span,
 p {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-bottom: var(--spacing-half);
 }
 
+ul {
+  display: block;
+  list-style-type: '- ';
+  margin: var(--spacing) 0;
+  padding-left: var(--spacing-double);
+}
+
 li {
   font-size: 1rem;
   line-height: 1.5rem;
+  display: list-item;
 }
 
 a {
@@ -57,6 +73,36 @@ a {
   cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid var(--color-text);
+}
+
+main {
+  width: 75vw;
+  max-width: 50rem;
+  margin: 25vh 1rem auto;
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: var(--spacing-double);
+}
+
+footer,
+footer * {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  text-align: center;
+  margin-bottom: var(--spacing-quarter);
+}
+
+.large {
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+.comment {
+  font-size: 90%;
+  font-style: italic;
 }
 
 a:link {
@@ -79,27 +125,10 @@ a:active {
   border-bottom: none;
 }
 
-main {
-  width: 75vw;
-  max-width: 50rem;
-  margin: 25vh 1rem auto;
-  padding: 1rem 0;
-  font-size: 1rem;
-}
-
-footer {
-  margin-top: var(--spacing-double);
-
-  & p {
-    font-size: 0.7rem;
-    line-height: 1rem;
-    margin-bottom: calc(var(--spacing-half) / 2);
-    text-align: center;
-  }
-}
-
 .list--noStyle {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .list--vertical > li {
@@ -108,18 +137,5 @@ footer {
 
   &:last-child {
     margin-right: 0;
-  }
-}
-
-.emoji__container {
-  width: 5rem;
-  height: 5rem;
-  background-position: center;
-  background-size: cover;
-}
-
-@media screen and (min-width: 900px) {
-  html {
-    font-size: 18px;
   }
 }
