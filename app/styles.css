@@ -38,6 +38,20 @@ h1 {
   font-family: var(--font-monospace);
 }
 
+div.headline {
+  margin: var(--spacing) 0;
+}
+
+div.headline > svg {
+  height: 2rem;
+  position: relative;
+  top: 0.25rem;
+}
+
+div.headline > * {
+  display: inline;
+}
+
 h2 {
   margin: var(--spacing) 0;
   font-family: var(--font-monospace);
