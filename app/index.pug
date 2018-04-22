@@ -1,15 +1,12 @@
 extends layouts/base
 
 block content
-  h1 Hi! 👋
+  div.headline
+    include assets/openmoji_waving-hand.svg
+    h1 Hi!
     
-  p I'm Christian, a software developer from #[a(href="https://map.what3words.com/scales.twirls.brochure", title="Bamberg on what3words") Bamberg] working currently as fullstack developer for #[a(href="https://proxipedia.io", title="PROXIPEDIA") PROXIPEDIA]. Want to know more? Check #[a(href="/cv", title="CV of Christian Ost") my CV] or talk to me over a beer or coffee. 
-  
-  p Get in contact with me:
+  p I'm Christian, a fullstack developer from #[a(href="https://map.what3words.com/scales.twirls.brochure", title="Bamberg on what3words") Bamberg].
+
+  p You want to know more? Check #[a(href="/2018_cv_christian-ost.pdf", title="CV of Christian Ost as PDF") my CV] or talk to me over a beer or coffee:
 
   include partials/contacts.pug
-
-block scripts
-  script(src="app.js")
-  script.
-    require('index.js')

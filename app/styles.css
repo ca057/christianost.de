@@ -34,17 +34,17 @@ body {
 h1 {
   font-size: 2rem;
   line-height: 2.2rem;
-  margin: var(--spacing) 0;
+  margin: var(--spacing-double) 0 var(--spacing);
   font-family: var(--font-monospace);
 }
 
 h2 {
-  margin: var(--spacing) 0;
+  margin: var(--spacing-double) 0 var(--spacing);
   font-family: var(--font-monospace);
 }
 
 h3 {
-  margin: var(--spacing-half) 0;
+  margin: var(--spacing) 0 var(--spacing-half);
   font-family: var(--font-sans-serif);
 }
 
@@ -138,4 +138,18 @@ a:active {
   &:last-child {
     margin-right: 0;
   }
+}
+
+div.headline {
+  margin: var(--spacing) 0;
+}
+
+div.headline > svg {
+  height: 2rem;
+  position: relative;
+  top: 0.25rem;
+}
+
+div.headline > * {
+  display: inline;
 }

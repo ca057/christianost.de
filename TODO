@@ -2,3 +2,5 @@ TODO
 
 - favicon
 - manifest
+
+- do not render current route in footer
