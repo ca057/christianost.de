@@ -26,5 +26,8 @@
     "prettier": "^1.16.1",
     "stylelint": "^8.4.0",
     "stylelint-config-recommended": "^2.0.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
