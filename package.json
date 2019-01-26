@@ -23,6 +23,8 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "parcel-bundler": "^1.11.0",
+    "posthtml": "^0.11.3",
+    "posthtml-include": "^1.2.0",
     "prettier": "^1.16.1",
     "stylelint": "^8.4.0",
     "stylelint-config-recommended": "^2.0.1"

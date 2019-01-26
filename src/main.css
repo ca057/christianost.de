@@ -1,1 +1,62 @@
 @import 'normalize.css';
+
+:root {
+  --color-text: #212121;
+  --spacing-quarter: calc(var(--spacing) / 4);
+  --spacing-half: calc(var(--spacing) / 2);
+  --spacing: 1rem;
+  --spacing-double: calc(var(--spacing) * 2);
+  --font-monospace: Menlo, Monaco, 'Roboto Mono', 'DejaVu Sans Mono',
+    'Ubuntu Mono', 'Segoe UI Mono', 'Liberation Mono', monospace;
+  --font-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+    Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font: 16px/1.2 var(--font-sans-serif);
+  color: var(--color-text);
+}
+
+.page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1.5rem;
+  border-left: 0.5rem solid gold;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: var(--font-monospace);
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+#page-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info_item > * {
+  display: inline-block;
+}
+
+.info_item > svg {
+  height: 1.2rem;
+  vertical-align: sub;
+}
