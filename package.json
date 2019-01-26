@@ -10,32 +10,26 @@
   "scripts": {
     "lint:js": "eslint src/**/*.js",
     "lint:css": "stylelint src/**/*.css",
-    "lint": "yarn run lint:js && yarn run lint:css",
-    "test": "yarn run lint",
-    "start": "brunch watch --server",
-    "prebuild": "yarn run test && yarn run clean",
-    "build": "brunch build --production",
-    "clean": "rm -rf public"
+    "lint": "npm run lint:js && npm run lint:css",
+    "test": "npm run lint",
+    "start": "parcel src/index.html ",
+    "prebuild": "npm run clean && npm run test",
+    "build": "parcel build src/index.html",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "auto-reload-brunch": "^2",
-    "babel-brunch": "~6.0",
-    "babel-preset-latest": "^6",
-    "brunch": "^2",
-    "brunch-static": "^1.2.1",
-    "clean-css-brunch": "^2",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
-    "html-brunch-static": "^1.3.3",
-    "postcss": "^6.0.16",
-    "postcss-brunch": "^2.1.0",
-    "postcss-cli": "^4.1.1",
-    "postcss-cssnext": "^3.1.0",
-    "pug-brunch-static": "^2.0.1",
+    "parcel-bundler": "^1.11.0",
+    "posthtml": "^0.11.3",
+    "posthtml-include": "^1.2.0",
+    "prettier": "^1.16.1",
     "stylelint": "^8.4.0",
-    "stylelint-config-recommended": "^2.0.1",
-    "uglify-js-brunch": "^2"
+    "stylelint-config-recommended": "^2.0.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
