@@ -25,3 +25,5 @@ node_modules/
 
 # output folder.
 dist
+
+.env
