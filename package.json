@@ -14,10 +14,13 @@
     "test": "npm run lint",
     "start": "parcel src/index.html ",
     "prebuild": "npm run clean && npm run test",
-    "build": "parcel build src/index.html",
+    "build": "npm run build:web && npm run build:server",
+    "build:web": "parcel build src/index.html -d dist/web",
+    "build:server": "ncc build server/index.js -o dist/server",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "@zeit/ncc": "^0.12.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
