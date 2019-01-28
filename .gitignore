@@ -25,5 +25,5 @@ node_modules/
 
 # output folder.
 dist
-
+coverage
 .env
