@@ -8,7 +8,7 @@
   "license": "BSD3",
   "private": true,
   "scripts": {
-    "lint:js": "eslint src/**/*.js",
+    "lint:js": "eslint .",
     "lint:css": "stylelint src/**/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "test": "npm run lint",

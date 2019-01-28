@@ -5,15 +5,16 @@ const TOGGL_API_TOKEN = process.env.toggl_api_token;
 const TOGGL_WORKSPACE_ID = process.env.toggl_workspace_id;
 const TOGGL_API_USER_AGENT = process.env.toggl_api_user_agent;
 
-// TODO: make it based on the current year
+const currentYear = new Date().getFullYear();
+
 got(
-  `https://toggl.com/reports/api/v2/details?user_agent=${TOGGL_API_USER_AGENT}&workspace_id=${TOGGL_WORKSPACE_ID}&since=2019-01-01&until=2019-12-31&perpage=1500`,
+  `https://toggl.com/reports/api/v2/details?user_agent=${TOGGL_API_USER_AGENT}&workspace_id=${TOGGL_WORKSPACE_ID}&since=${currentYear}-01-01&until=${currentYear}-12-31&perpage=1500`,
   { auth: `${TOGGL_API_TOKEN}:api_token` },
 )
   .then(response => {
-    const details = JSON.parse(response.body);
+    const details = JSON.parse(response.body) || {};
 
-    const timeEntries = details.data.map(({ id, dur, start, end }) => ({
+    const timeEntries = (details.data || []).map(({ id, dur, start, end }) => ({
       id,
       dur,
       start,
@@ -22,20 +23,26 @@ got(
 
     const groupedByDay = timeEntries.reduce((accum, curr) => {
       const date = curr.start.split('T')[0];
-      if (accum[date]) {
-        accum[date] = [...accum[date], curr];
-      } else {
-        accum[date] = [curr];
-      }
+
+      // eslint-disable-next-line no-param-reassign
+      accum[date] = accum[date] ? [...accum[date], curr] : [curr];
+
       return accum;
     }, {});
 
-    const perDay = Object.keys(groupedByDay).reduce((accum, key) => {
-      accum[key] = {
-        dur: groupedByDay[key].reduce((result, curr) => result + curr.dur, 0),
-      };
-      return accum;
-    }, {});
-    console.log(perDay);
+    const perDay = Object.keys(groupedByDay).reduce(
+      (accum, key) => ({
+        ...accum,
+        [key]: {
+          dur: groupedByDay[key].reduce((result, curr) => result + curr.dur, 0),
+        },
+      }),
+      {},
+    );
+
+    const durations = Object.values(perDay).map(entry => entry.dur);
+    const maxEntry = Math.max(...durations);
+    const minEntry = Math.min(...durations);
+    console.log(perDay, maxEntry, minEntry);
   })
   .catch(console.error);
