@@ -1,6 +1,8 @@
 require('dotenv').config();
 const got = require('got');
 
+const { interpolateLinear } = require('./lib/interpolate');
+
 const TOGGL_API_TOKEN = process.env.toggl_api_token;
 const TOGGL_WORKSPACE_ID = process.env.toggl_workspace_id;
 const TOGGL_API_USER_AGENT = process.env.toggl_api_user_agent;
@@ -31,18 +33,29 @@ got(
     }, {});
 
     const perDay = Object.keys(groupedByDay).reduce(
-      (accum, key) => ({
+      (accum, key) => [
         ...accum,
-        [key]: {
-          dur: groupedByDay[key].reduce((result, curr) => result + curr.dur, 0),
+        {
+          value: groupedByDay[key].reduce(
+            (result, curr) => result + curr.dur,
+            0,
+          ),
         },
-      }),
-      {},
+      ],
+      [],
     );
 
-    const durations = Object.values(perDay).map(entry => entry.dur);
+    const durations = Object.values(perDay).map(entry => entry.value);
     const maxEntry = Math.max(...durations);
     const minEntry = Math.min(...durations);
-    console.log(perDay, maxEntry, minEntry);
+
+    const normalizeValue = interpolateLinear([minEntry, maxEntry], [0, 1]);
+
+    console.log(
+      perDay.map(data => ({
+        ...data,
+        value: normalizeValue(data.value),
+      })),
+    );
   })
   .catch(console.error);
