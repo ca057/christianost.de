@@ -53,12 +53,13 @@ got(
 
     const normalizeValue = interpolateLinear([minEntry, maxEntry], [0, 1]);
 
-    console.log(
-      perDay.map(data => ({
+    const result = {
+      lines: perDay.map(data => ({
         ...data,
         value: normalizeValue(data.value),
       })),
-    );
-    // await writeToFile('', {}, {});
+    };
+
+    await writeToFile(DATA_FILE_PATH, JSON.stringify(result), {});
   })
   .catch(console.error);

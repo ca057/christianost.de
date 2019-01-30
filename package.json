@@ -13,7 +13,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "test": "jest",
     "start": "parcel src/index.html",
-    "dev:server": "nodemon server/index.js",
+    "dev:server": "nodemon --watch server server/index.js",
     "prebuild": "npm run clean && npm run lint && npm run test",
     "build": "npm run build:web && npm run build:server",
     "build:web": "parcel build src/index.html -d dist/web",
