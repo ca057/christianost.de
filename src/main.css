@@ -25,7 +25,7 @@ main {
 }
 
 body {
-  font: 16px/1.2 var(--font-sans-serif);
+  font: 20px/1.2 var(--font-sans-serif);
   color: var(--color-text);
 }
 
@@ -41,9 +41,23 @@ h1 {
   font-family: var(--font-monospace);
 }
 
+a,
 p {
-  font-size: 1.2rem;
   margin-top: 0;
+}
+
+a,
+a:link,
+a:visited {
+  color: var(--color-text);
+  border-bottom: 0.15rem dashed var(--color-text);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+  border-bottom: 0.15rem solid var(--color-text);
 }
 
 #page-1 {
