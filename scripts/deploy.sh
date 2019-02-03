@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
-web_build_dir=$1
-server_build_dir=$2
+target_environment=$1 # production
+web_build_dir=$2 # dist/web
+server_build_dir=$3 # dist/server
+
+echo $target_environment
+echo $web_build_dir 
+echo $server_build_dir
 
 deploy_assets_to_server () {
   name=$1
@@ -14,13 +19,8 @@ deploy_assets_to_server () {
 echo "Starting deployment."
 echo ""
 
-if [ ! -d "$web_build_dir" ]; then
-  echo "ERROR: The web output directory does not exist."
-  exit 1
-fi
-
-if [ ! -d "$server_build_dir" ]; then
-  echo "ERROR: The server output directory does not exist."
+if [ ! -d "$web_build_dir" ] || [ ! -d "$server_build_dir" ]; then
+  echo "ERROR: One of the build directories does not exist."
   exit 1
 fi
 
