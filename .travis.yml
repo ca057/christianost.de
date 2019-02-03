@@ -15,8 +15,8 @@ branches:
 
 env:
   global:
-    - web_build_dir=dist/web
-    - server_build_dir=dist/server
+    - web_build_dir=dist/web/.
+    - server_build_dir=dist/server/.
 
 script:
   - npm run lint
