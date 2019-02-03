@@ -17,11 +17,15 @@ script:
   - npm run lint
   - npm run test
 
+before_deploy:
+  - npm run build
+
 deploy:
   - provider: script
-    script: bash scripts/deploy.sh production $web_build_dir $server_build_dir
+    skip_cleanup: true
+    script: bash scripts/deploy.sh production
     on:
-      all_branches: true
+      branch: master
 
 notifications:
   email: false

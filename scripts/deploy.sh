@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -ev
 
 target_environment=$1 # production
 # web_build_dir=$2 # dist/web
