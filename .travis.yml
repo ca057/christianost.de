@@ -10,5 +10,11 @@ script:
   - npm run lint
   - npm run test
 
+deploy:
+  - provider: script
+    script: bash scripts/deploy.sh production
+    on:
+      branch: master
+
 notifications:
   email: false
