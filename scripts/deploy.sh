@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 target_environment=$1 # production
-web_build_dir=$2 # dist/web
-server_build_dir=$3 # dist/server
+# web_build_dir=$2 # dist/web
+# server_build_dir=$3 # dist/server
 
 echo $target_environment
 echo $web_build_dir 
