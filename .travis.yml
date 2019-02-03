@@ -4,6 +4,11 @@ node_js:
 
 cache: npm
 
+addons:
+  apt:
+    packages:
+      - sshpass
+
 branches:
   only:
     - master
