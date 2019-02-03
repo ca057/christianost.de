@@ -6,9 +6,20 @@ branches:
   only:
     - master
 
+env:
+  global:
+    - web_build_dir=dist/web
+    - server_build_dir=dist/server
+
 script:
   - npm run lint
   - npm run test
+
+deploy:
+  - provider: script
+    script: bash scripts/deploy.sh production $web_build_dir $server_build_dir
+    on:
+      all_branches: true
 
 notifications:
   email: false
