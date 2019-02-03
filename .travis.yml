@@ -23,7 +23,8 @@ script:
   - npm run test
 
 before_deploy:
-  - npm run build
+  - npm run build:web
+  - npm run build:server
 
 deploy:
   - provider: script
