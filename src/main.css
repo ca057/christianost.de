@@ -1,14 +1,12 @@
 @import 'normalize.css';
 
 :root {
-  --color-text: #212121;
-  --color-accent: gold;
+  --color-text: #1a3050;
+  --color-accent: #fecb00;
   --spacing-quarter: calc(var(--spacing) / 4);
   --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
   --spacing-double: calc(var(--spacing) * 2);
-  --font-monospace: Menlo, Monaco, 'Roboto Mono', 'DejaVu Sans Mono',
-    'Ubuntu Mono', 'Segoe UI Mono', 'Liberation Mono', monospace;
   --font-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
     Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     'Helvetica Neue', sans-serif;
@@ -34,16 +32,8 @@ body {
   color: var(--color-text);
 }
 
-.page {
-  width: 100vw;
-  min-height: 100vh;
-  padding: 1.5rem;
-  border-left: 0.5rem solid var(--color-accent);
-}
-
 h1 {
   text-transform: uppercase;
-  font-family: var(--font-monospace);
 }
 
 a,
@@ -63,6 +53,13 @@ a:focus,
 a:hover,
 a:active {
   border-bottom: 0.15rem solid var(--color-text);
+}
+
+.page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1.5rem;
+  border-left: 0.5rem solid var(--color-accent);
 }
 
 #page-1 {
