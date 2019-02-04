@@ -2,6 +2,7 @@
 
 :root {
   --color-text: #212121;
+  --color-accent: gold;
   --spacing-quarter: calc(var(--spacing) / 4);
   --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
@@ -18,14 +19,18 @@
 }
 
 html,
-body,
-main {
+body {
   height: 100%;
   width: 100%;
 }
 
+main {
+  height: 100%;
+  max-width: 50rem;
+}
+
 body {
-  font: 20px/1.2 var(--font-sans-serif);
+  font: 20px/1.7 var(--font-sans-serif);
   color: var(--color-text);
 }
 
@@ -33,7 +38,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   padding: 1.5rem;
-  border-left: 0.5rem solid gold;
+  border-left: 0.5rem solid var(--color-accent);
 }
 
 h1 {
@@ -63,13 +68,4 @@ a:active {
 #page-1 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.info_item > * {
-  display: inline-block;
-}
-
-.info_item > svg {
-  vertical-align: sub;
 }
