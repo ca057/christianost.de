@@ -33,7 +33,8 @@ body {
 }
 
 h1 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  font-size: 10vw;
 }
 
 a,
@@ -58,11 +59,14 @@ a:active {
 .page {
   width: 100vw;
   min-height: 100vh;
-  padding: 1.5rem;
-  border-left: 0.5rem solid var(--color-accent);
+  padding: var(--spacing-double) var(--spacing);
+  border-left: var(--spacing-half) solid var(--color-accent);
+  border-right: var(--spacing-half) solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #page-1 {
-  display: flex;
-  flex-direction: column;
+  background-color: var(--color-accent);
 }
