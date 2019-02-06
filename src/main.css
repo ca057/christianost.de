@@ -1,5 +1,11 @@
 @import 'normalize.css';
 
+@font-face {
+  font-family: Inter Regular;
+  src: url(assets/Inter-Regular.woff2) format('woff2'),
+    url(assets/Inter-Regular.woff) format('woff');
+}
+
 :root {
   --color-text: #1a3050;
   --color-accent: #fecb00;
@@ -7,9 +13,9 @@
   --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
   --spacing-double: calc(var(--spacing) * 2);
-  --font-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
-    Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    'Helvetica Neue', sans-serif;
+  --font-sans-serif-system: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+    Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    'Helvetica Neue';
 }
 
 * {
@@ -22,14 +28,18 @@ body {
   width: 100%;
 }
 
+body {
+  font: 20px/1.7 var(--font-sans-serif-system), sans-serif;
+  color: var(--color-text);
+}
+
+body.fonts-loaded {
+  font-family: Inter Regular, var(--font-sans-serif-system), sans-serif;
+}
+
 main {
   height: 100%;
   max-width: 50rem;
-}
-
-body {
-  font: 20px/1.7 var(--font-sans-serif);
-  color: var(--color-text);
 }
 
 h1 {
