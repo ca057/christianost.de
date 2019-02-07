@@ -1,9 +1,10 @@
 {
   "name": "christianost.de",
-  "short_name": "christianost.de",
+  "short_name": "CO",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fecb00",
+  "theme_color": "#fecb00",
   "description": "Portfolio of Christian Ost",
   "icons": [
     {
