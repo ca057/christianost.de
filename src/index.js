@@ -1,15 +1,15 @@
-import FontFaceObserver from 'fontfaceobserver';
+import createFontsLoader, { addFontLoadedClass } from './modules/fonts';
+import drawLines from './modules/lines';
 
-const interFontObserver = new FontFaceObserver('Inter Regular');
+const fontsLoader = createFontsLoader();
 
-const addFontLoadedClass = () => {
-  document.body.classList.add('fonts-loaded');
+const documentReady = () => {
+  fontsLoader.then(addFontLoadedClass);
+  drawLines(document.getElementById('lines-space'));
 };
 
-interFontObserver.load().then(() => {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addFontLoadedClass);
-  } else {
-    addFontLoadedClass();
-  }
-});
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', documentReady);
+} else {
+  documentReady();
+}

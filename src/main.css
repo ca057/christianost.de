@@ -80,3 +80,8 @@ a:active {
 #page-1 {
   background-color: var(--color-accent);
 }
+
+#lines-space {
+  flex: 1;
+  background-color: aqua;
+}
