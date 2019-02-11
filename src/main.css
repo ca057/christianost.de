@@ -77,6 +77,12 @@ a:active {
   justify-content: flex-start;
 }
 
+.block__vertical-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #page-1 {
   background-color: var(--color-accent);
 }
