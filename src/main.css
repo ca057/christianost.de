@@ -43,8 +43,8 @@ main {
 }
 
 h1 {
-  /* text-transform: uppercase; */
   font-size: 10vw;
+  margin: var(--spacing) 0;
 }
 
 a,

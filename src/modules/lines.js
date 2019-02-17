@@ -1,5 +1,4 @@
 import Two from 'two.js';
-import { ENGINE_METHOD_PKEY_ASN1_METHS } from 'constants';
 
 function toRadians(degrees) {
   return (degrees * Math.PI) / 180;
@@ -26,7 +25,7 @@ function drawLines(element, lineData) {
   }).appendTo(element);
   console.log(lineData);
 
-  const unit = two.height / 15;
+  const unit = two.height / lineData.lines.length;
   const center = { x: two.width / 2, y: two.height / 2 };
 
   const pointsToDraw = lineData.lines.reduce(
