@@ -1,24 +1,5 @@
-// const retryAsync = (times, task) => {
-//   if (!task || typeof task !== 'function' || times < 0) {
-//     throw new TypeError(
-//       'No task passed or task is not of type function or times is a negative value.',
-//     );
-//   }
-
-//   return new Promise(async (resolve, reject) => {
-//     for (let i = 0; i < times; i++) {
-//       try {
-//         const result = await task();
-//         resolve(result);
-//         break;
-//       } catch (error) {
-//         if (i === times - 1) {
-//           reject(error);
-//         }
-//       }
-//     }
-//   });
-// };
+const delay = delayInMs =>
+  new Promise(resolve => setTimeout(resolve, delayInMs));
 
 const conditionallyRetryAsync = async (task, conditionCheck) => {
   let lastResult = null;
@@ -29,4 +10,4 @@ const conditionallyRetryAsync = async (task, conditionCheck) => {
   return lastResult;
 };
 
-module.exports = { conditionallyRetryAsync };
+module.exports = { conditionallyRetryAsync, delay };

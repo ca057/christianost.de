@@ -1,7 +1,7 @@
 const got = require('got');
 
 const { interpolateLinear } = require('./../lib/interpolate');
-const { conditionallyRetryAsync } = require('./../lib/asyncHelpers');
+const { conditionallyRetryAsync, delay } = require('./../lib/asyncHelpers');
 
 const TOGGL_API_TOKEN = process.env.toggl_api_token;
 const TOGGL_API_USER_AGENT = process.env.toggl_api_user_agent;
@@ -22,10 +22,12 @@ const getTrackedTimeUntilEmpty = ({ workspaceId }) => {
 
   const task = () => {
     page += 1;
-    return getTrackedTimePaginated({ page, workspaceId }).then(result => {
-      allEntries = allEntries.concat(...result.data);
-      return result;
-    });
+    return delay(1000).then(() =>
+      getTrackedTimePaginated({ page, workspaceId }).then(result => {
+        allEntries = allEntries.concat(...result.data);
+        return result;
+      }),
+    );
   };
 
   const conditionCheck = result =>
