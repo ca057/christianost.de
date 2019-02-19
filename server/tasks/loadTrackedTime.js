@@ -1,28 +1,48 @@
 const got = require('got');
 
 const { interpolateLinear } = require('./../lib/interpolate');
+const { conditionallyRetryAsync } = require('./../lib/asyncHelpers');
 
 const TOGGL_API_TOKEN = process.env.toggl_api_token;
 const TOGGL_API_USER_AGENT = process.env.toggl_api_user_agent;
 
 const currentYear = new Date().getFullYear();
 
-const loadTrackedTime = ({ workspaceId }) =>
+const getTrackedTimePaginated = ({ page, workspaceId }) =>
   got(
-    `https://toggl.com/reports/api/v2/details?user_agent=${TOGGL_API_USER_AGENT}&workspace_id=${workspaceId}&since=${currentYear}-01-01&until=${currentYear}-12-31&perpage=1500`,
+    `https://toggl.com/reports/api/v2/details?user_agent=${TOGGL_API_USER_AGENT}&workspace_id=${workspaceId}&since=${currentYear}-01-01&page=${page}`,
     { auth: `${TOGGL_API_TOKEN}:api_token` },
   )
-    .then(async response => {
-      const details = JSON.parse(response.body) || {};
+    .then(response => JSON.parse(response.body))
+    .catch(() => []);
 
-      const timeEntries = (details.data || []).map(
-        ({ id, dur, start, end }) => ({
-          id,
-          dur,
-          start,
-          end,
-        }),
-      );
+const getTrackedTimeUntilEmpty = ({ workspaceId }) => {
+  let allEntries = [];
+  let page = 0;
+
+  const task = () => {
+    page += 1;
+    return getTrackedTimePaginated({ page, workspaceId }).then(result => {
+      allEntries = allEntries.concat(...result.data);
+      return result;
+    });
+  };
+
+  const conditionCheck = result =>
+    result && result.data && result.data.length > 0;
+
+  return conditionallyRetryAsync(task, conditionCheck).then(() => allEntries);
+};
+
+const loadTrackedTime = ({ workspaceId }) =>
+  getTrackedTimeUntilEmpty({ workspaceId })
+    .then(details => {
+      const timeEntries = details.map(({ id, dur, start, end }) => ({
+        id,
+        dur,
+        start,
+        end,
+      }));
 
       const groupedByDay = timeEntries.reduce((accum, curr) => {
         const date = curr.start.split('T')[0];

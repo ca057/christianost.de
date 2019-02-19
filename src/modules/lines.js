@@ -8,6 +8,15 @@ function loadLines() {
   return fetch('data.json').then(res => res.json());
 }
 
+function animatePath(path, onStopCallback) {
+  if (path.ending > 0.9999) {
+    path.ending = 1;
+    onStopCallback();
+  }
+
+  path.ending += 0.01;
+}
+
 /**
  *
  * @param {HTMLElement} element
@@ -23,10 +32,9 @@ function drawLines(element, lineData) {
     height: clientHeight,
     width: clientWidth,
   }).appendTo(element);
-  console.log(lineData);
 
-  const unit = two.height / lineData.lines.length;
-  const center = { x: two.width / 2, y: two.height / 2 };
+  const unit = two.height / 10;
+  const center = { x: 0, y: 0 };
 
   const pointsToDraw = lineData.lines.reduce(
     (accum, { value }) => {
@@ -48,22 +56,22 @@ function drawLines(element, lineData) {
   );
   path.curved = true;
   path.linewidth = 5;
+  path.ending = 1;
 
-  // pointsToDraw
-  //   .map((point, index, pointList) => {
-  //     const nextPoint = pointList[index + 1];
-  //     if (!nextPoint) {
-  //       return null;
-  //     }
-  //     const line = two.makeLine(point.x, point.y, nextPoint.x, nextPoint.y);
-  //     line.linewidth = 5;
-  //     return line;
-  //   })
-  //   .filter(Boolean);
+  const boundingClientRect = path.getBoundingClientRect();
+  path.translation.set(
+    boundingClientRect.width / 2,
+    boundingClientRect.height / 2,
+  );
+  path.ending = 0;
 
-  two.update();
+  two.bind('update', () => animatePath(path, () => two.pause())).play();
 }
 
 export default function lines(element) {
-  loadLines().then(data => drawLines(element, data));
+  try {
+    loadLines().then(data => drawLines(element, data));
+  } catch (ignoreMe) {
+    console.log(ignoreMe);
+  }
 }
