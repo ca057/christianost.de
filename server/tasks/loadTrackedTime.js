@@ -49,10 +49,10 @@ const loadTrackedTime = ({ workspaceId }) =>
       const groupedByDay = timeEntries.reduce((accum, curr) => {
         const date = curr.start.split('T')[0];
 
-        // eslint-disable-next-line no-param-reassign
-        accum[date] = accum[date] ? [...accum[date], curr] : [curr];
-
-        return accum;
+        return {
+          ...accum,
+          [accum[date]]: [...(accum[date] || []), curr],
+        };
       }, {});
 
       const perDay = Object.keys(groupedByDay).reduce(
@@ -69,10 +69,11 @@ const loadTrackedTime = ({ workspaceId }) =>
       );
 
       const durations = Object.values(perDay).map(entry => entry.value);
-      const maxEntry = Math.max(...durations);
-      const minEntry = Math.min(...durations);
 
-      const normalizeValue = interpolateLinear([minEntry, maxEntry], [0, 1]);
+      const normalizeValue = interpolateLinear(
+        [Math.min(...durations), Math.max(...durations)],
+        [0, 1],
+      );
 
       return {
         lines: perDay.map(data => ({
