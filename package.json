@@ -13,11 +13,9 @@
     "lint": "npm run lint:js && npm run lint:css",
     "test": "jest",
     "start": "parcel src/index.html",
-    "dev:server": "nodemon --watch server server/index.js",
     "prebuild": "npm run clean && npm run lint && npm run test",
-    "build": "npm run build:web && npm run build:server",
+    "build": "npm run build:web",
     "build:web": "parcel build src/index.html -d dist/web",
-    "build:server": "ncc build server/index.js -o dist/server",
     "clean": "rm -rf dist coverage"
   },
   "devDependencies": {
@@ -39,8 +37,6 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "fontfaceobserver": "^2.1.0",
-    "got": "^9.6.0",
-    "normalize.css": "^8.0.1",
-    "two.js": "^0.7.0-beta.3"
+    "normalize.css": "^8.0.1"
   }
 }
