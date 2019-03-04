@@ -3,8 +3,8 @@
   "short_name": "CO",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#fecb00",
-  "theme_color": "#fecb00",
+  "background_color": "#ffffff",
+  "theme_color": "#333333",
   "description": "Portfolio of Christian Ost",
   "icons": [
     {
