@@ -15,7 +15,7 @@ deploy_assets_to_server () {
 echo "Starting deployment."
 echo ""
 
-if [ ! -d "$web_build_dir" ] || [ ! -d "$server_build_dir" ]; then
+if [ ! -d "$web_build_dir" ]; then
   echo "ERROR: One of the build directories does not exist."
   exit 1
 fi
