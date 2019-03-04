@@ -31,7 +31,7 @@
     "posthtml": "^0.11.3",
     "posthtml-include": "^1.2.0",
     "prettier": "^1.16.1",
-    "stylelint": "^8.4.0",
+    "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.0.1"
   },
   "dependencies": {
