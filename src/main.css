@@ -31,7 +31,7 @@ body {
 }
 
 body {
-  font: 22px/1.5 var(--font-sans-serif-system), sans-serif;
+  font: 18px/1.5 var(--font-sans-serif-system), sans-serif;
   color: var(--color-text);
 }
 
@@ -44,8 +44,8 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 1.3;
+  font-size: 2rem;
+  line-height: 1.5;
   margin: var(--spacing-trice) 0 var(--spacing-double) 0;
 }
 
@@ -80,4 +80,24 @@ a:active {
 
 .page > * {
   max-width: var(--width-text);
+}
+
+@media all and (min-width: 450px) {
+  body {
+    font: 20px/1.5 var(--font-sans-serif-system), sans-serif;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media all and (min-width: 550px) {
+  body {
+    font: 22px/1.5 var(--font-sans-serif-system), sans-serif;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
 }
