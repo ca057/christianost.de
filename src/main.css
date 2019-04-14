@@ -17,6 +17,7 @@
   --font-sans-serif-system: BlinkMacSystemFont, -apple-system, 'Segoe UI',
     Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     'Helvetica Neue';
+  --width-text: 50rem;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
 }
 
 body {
-  font: 22px/1.7 var(--font-sans-serif-system), sans-serif;
+  font: 22px/1.5 var(--font-sans-serif-system), sans-serif;
   color: var(--color-text);
 }
 
@@ -75,4 +76,8 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.page > * {
+  max-width: var(--width-text);
 }
