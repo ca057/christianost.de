@@ -16,7 +16,8 @@
     "prebuild": "npm run clean && npm run lint && npm run test",
     "build": "npm run build:web",
     "build:web": "parcel build src/index.html -d dist/web",
-    "clean": "rm -rf dist coverage"
+    "clean": "rm -rf dist coverage",
+    "create:favicon": "node scripts/create-favicon.js"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.12.1",
@@ -32,7 +33,8 @@
     "posthtml-include": "^1.2.0",
     "prettier": "^1.16.1",
     "stylelint": "^9.10.1",
-    "stylelint-config-recommended": "^2.0.1"
+    "stylelint-config-recommended": "^2.0.1",
+    "svg-to-png": "^4.0.0"
   },
   "dependencies": {
     "dotenv": "^6.2.0",
