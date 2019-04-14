@@ -13,7 +13,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "test": "# jest",
     "start": "parcel src/index.html",
-    "prebuild": "npm run clean && npm run lint && npm run test",
+    "prebuild": "npm run clean && npm run lint && npm run test && npm run create:favicon",
     "build": "npm run build:web",
     "build:web": "parcel build src/index.html -d dist/web",
     "clean": "rm -rf dist coverage",
