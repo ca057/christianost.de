@@ -61,14 +61,16 @@ a,
 a:link,
 a:visited {
   color: var(--color-text);
-  border-bottom: 0.15rem solid var(--color-text);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-skip: edges;
 }
 
 a:focus,
 a:hover,
 a:active {
-  border-bottom: 0.15rem dashed var(--color-text);
+  text-decoration: none;
+  background-color: var(--color-text);
+  color: var(--color-background);
 }
 
 .page {
@@ -87,6 +89,13 @@ a:active {
 *::selection {
   background-color: var(--color-text);
   color: var(--color-background);
+}
+
+a:focus::selection,
+a:hover::selection,
+a:active::selection {
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 @media all and (min-width: 450px) {
