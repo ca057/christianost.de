@@ -9,6 +9,7 @@
 :root {
   --color-text: #333333;
   --color-accent: #fecb00;
+  --color-background: #fafafa;
   --spacing-quarter: calc(var(--spacing) / 4);
   --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
@@ -33,6 +34,7 @@ body {
 body {
   font: 18px/1.5 var(--font-sans-serif-system), sans-serif;
   color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 body.fonts-loaded {
@@ -59,14 +61,14 @@ a,
 a:link,
 a:visited {
   color: var(--color-text);
-  border-bottom: 0.15rem dashed var(--color-text);
+  border-bottom: 0.15rem solid var(--color-text);
   text-decoration: none;
 }
 
 a:focus,
 a:hover,
 a:active {
-  border-bottom: 0.15rem solid var(--color-text);
+  border-bottom: 0.15rem dashed var(--color-text);
 }
 
 .page {
@@ -80,6 +82,11 @@ a:active {
 
 .page > * {
   max-width: var(--width-text);
+}
+
+*::selection {
+  background-color: var(--color-text);
+  color: var(--color-background);
 }
 
 @media all and (min-width: 450px) {
