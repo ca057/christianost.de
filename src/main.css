@@ -84,16 +84,6 @@ a:active {
   color: var(--color-background);
 }
 
-.page {
-  width: 100%;
-  max-width: var(--width-text);
-  min-height: 100vh;
-  padding: var(--spacing-double);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 *::selection {
   background-color: var(--color-text);
   color: var(--color-background);
@@ -104,6 +94,16 @@ a:hover::selection,
 a:active::selection {
   background-color: var(--color-background);
   color: var(--color-text);
+}
+
+.page {
+  width: 100%;
+  max-width: var(--width-text);
+  min-height: 100vh;
+  padding: var(--spacing-double);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @media all and (min-width: 450px) {
