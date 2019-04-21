@@ -42,7 +42,18 @@ body.fonts-loaded {
 }
 
 main {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+footer {
+  margin-top: auto;
+}
+
+footer * {
+  font-size: 75%;
 }
 
 h1 {
@@ -74,16 +85,13 @@ a:active {
 }
 
 .page {
-  width: 100vw;
+  width: 100%;
+  max-width: var(--width-text);
   min-height: 100vh;
   padding: var(--spacing-double);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-.page > * {
-  max-width: var(--width-text);
 }
 
 *::selection {

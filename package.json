@@ -12,7 +12,7 @@
     "lint:css": "stylelint src/**/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "test": "# jest",
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.html src/imprint/index.html",
     "prebuild": "npm run clean && npm run lint && npm run test && npm run create:favicon",
     "build": "npm run build:web",
     "build:web": "parcel build src/index.html -d dist/web",
