@@ -106,6 +106,10 @@ a:active::selection {
   justify-content: flex-start;
 }
 
+li span {
+  font-size: 75%;
+}
+
 @media all and (min-width: 450px) {
   body {
     font: 20px/1.5 var(--font-sans-serif-system), sans-serif;
