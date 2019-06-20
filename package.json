@@ -20,24 +20,21 @@
     "create:favicon": "node scripts/create-favicon.js"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.12.1",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "jest": "^24.0.0",
-    "nodemon": "^1.18.9",
-    "parcel-bundler": "^1.11.0",
-    "postcss-preset-env": "^6.5.0",
-    "posthtml": "^0.11.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "jest": "^24.8.0",
+    "parcel-bundler": "^1.12.3",
+    "postcss-preset-env": "^6.6.0",
+    "posthtml": "^0.11.4",
     "posthtml-include": "^1.2.0",
-    "prettier": "^1.16.1",
-    "stylelint": "^9.10.1",
-    "stylelint-config-recommended": "^2.0.1",
+    "prettier": "^1.18.2",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended": "^2.2.0",
     "svg-to-png": "^4.0.0"
   },
   "dependencies": {
-    "dotenv": "^6.2.0",
     "fontfaceobserver": "^2.1.0",
     "normalize.css": "^8.0.1"
   }
