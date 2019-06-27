@@ -106,6 +106,10 @@ a:active::selection {
   justify-content: flex-start;
 }
 
+ul {
+  margin-top: 0;
+}
+
 li span {
   font-size: 75%;
 }
