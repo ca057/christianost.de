@@ -20,4 +20,4 @@ if [ ! -d "$web_build_dir" ]; then
   exit 1
 fi
 
-deploy_assets_to_server "web" $web_build_dir
+deploy_assets_to_server "dist" $web_build_dir
