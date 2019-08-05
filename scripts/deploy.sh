@@ -15,7 +15,7 @@ echo "Starting deployment."
 echo ""
 
 if [ ! -d "$web_build_dir" ]; then
-  echo "ERROR: One of the build directories does not exist."
+  echo "ERROR: The build directory does not exist."
   exit 1
 fi
 
