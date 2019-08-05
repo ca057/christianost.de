@@ -2,10 +2,9 @@
 set -ev
 
 deploy_assets_to_server () {
-  name=$1
-  assets_path=$2
+  assets_path=$1
 
-  echo "DEPLOY [$name]: Start deploying assets to remote."
+  echo "DEPLOY: Start deploying assets to remote."
 
   export SSHPASS=$deploy_password
   sshpass -e scp -o stricthostkeychecking=no -r $assets_path $deploy_user@$deploy_host:$deploy_path
@@ -20,4 +19,4 @@ if [ ! -d "$web_build_dir" ]; then
   exit 1
 fi
 
-deploy_assets_to_server "dist" $web_build_dir
+deploy_assets_to_server $web_build_dir
