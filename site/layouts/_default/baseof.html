@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{ $.Site.Language.Lang }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
+  <title>{{ $.Site.Title }}</title>
+  <meta
+    name="description"
+    content="I am a frontend developer living in Barcelona. Send me a message to hallo@christianost.de."
+  />
+  <meta name="theme-color" content="#fecb00" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="icon16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="icon32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="icon192.png">
+
+  {{ $stylesheet := .Site.Data.webpack.main }}
+  {{ with $stylesheet.css }}
+    <link href="{{ relURL . }}" rel="stylesheet">
+  {{ end }}
+</head>
+
+<body>
+
+  <main>
+    {{ block "header" . }}{{ partial "header" . }}{{end}}
+    
+    {{ block "main" . }}{{end}}
+    
+    {{ if ne .Params.show_footer false }}
+      {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+    {{ end }}
+  </main>
+
+  {{ $script := .Site.Data.webpack.main }}
+  {{ with $script.js }}
+    <script src="{{ relURL . }}"></script>
+  {{ end }}
+</body>
+
+</html>

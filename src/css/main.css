@@ -1,7 +1,7 @@
 @import 'normalize.css';
 
 @font-face {
-  font-family: Inter Regular;
+  font-family: 'Inter Regular';
   font-display: optional;
   src: url(/Inter-Regular.woff2) format('woff2'),
     url(/Inter-Regular.woff) format('woff');
@@ -38,10 +38,14 @@ body {
 }
 
 main {
+  width: 100%;
+  max-width: var(--width-text);
+  min-height: 100vh;
+  padding: var(--spacing-double);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  margin: 0 auto;
 }
 
 footer {
@@ -92,16 +96,6 @@ a:active::selection {
   color: var(--color-text);
 }
 
-.page {
-  width: 100%;
-  max-width: var(--width-text);
-  min-height: 100vh;
-  padding: var(--spacing-double);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 ul {
   margin-top: 0;
 }
@@ -116,7 +110,7 @@ li span {
 
 @media all and (min-width: 450px) {
   body {
-    font: 20px/1.5 var(--font-sans-serif);
+    font: 20px/1.5 var(--font-sans-serif), sans-serif;
   }
 
   h1 {
@@ -126,7 +120,7 @@ li span {
 
 @media all and (min-width: 550px) {
   body {
-    font: 22px/1.5 var(--font-sans-serif);
+    font: 22px/1.5 var(--font-sans-serif), sans-serif;
   }
 
   h1 {
