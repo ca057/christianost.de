@@ -6,24 +6,89 @@
     <title>christianost.de</title>
     <meta
       name="description"
-      content="I am a developer living in Barcelona. Drop me a message via hallo@christianost.de"
+      content="I am a frontend developer living in Barcelona. Send me a message to hallo@christianost.de."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fecb00" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script async src="index.js"></script>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/icon16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="assets/icon32.png" sizes="32x32" />
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
+      _paq.push(['setCookieDomain', '*.christianost.de']);
+      _paq.push(['setDomains', ['*.christianost.de']]);
+      _paq.push(['setDoNotTrack', true]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u = '//analytics.christianost.de/';
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document,
+          g = d.createElement('script'),
+          s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <noscript
+      ><p>
+        <img
+          src="//analytics.christianost.de/matomo.php?idsite=1&amp;rec=1"
+          style="border:0;"
+          alt=""
+        /></p
+    ></noscript>
   </head>
   <body>
     <main>
-      <section class="page" id="page-1">
-        <h1>Christian Ost</h1>
+      <section class="page">
+        <header>
+          <h1>Christian Ost</h1>
+        </header>
         <p>
-          Developer in
+          Hi! I’m a developer living in
           <a
             title="Barcelona on Wikipedia"
             href="https://en.wikipedia.org/wiki/Barcelona"
             >Barcelona</a
-          >. Drop me a message via
-          <a href="mailto:hallo@christianost.de">hallo@christianost.de</a>.
+          >, currently building user interfaces for
+          <a title="Typeform" href="https://typeform.com">Typeform</a>. Send me
+          a message to
+          <a href="mailto:hallo@christianost.de">hallo@christianost.de</a> (if
+          possible, use my
+          <a
+            href="http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x41980624AEC84355"
+            title="Get my PGP key AEC84355"
+            >PGP key</a
+          >
+          to encrypt your message). I’m
+          <a href="https://github.com/ca057">ca057</a> on GitHub,
+          <a href="https://keybase.io/christianost">christianost</a> on keybase
+          and <a href="https://twitter.com/_christianost">@_christianost</a> on
+          Twitter.
         </p>
+        <h2>Talks</h2>
+        <ul>
+          <li>
+            <p>
+              <a href="talks/2019-06-27_bcn-js_web-payment-ecosystem.pdf">
+                Introduction to the Web Payment Ecosystem and the Payment
+                Request API
+              </a>
+            </p>
+            <span>27 June 2019 at BarcelonaJS</span>
+          </li>
+        </ul>
+        <footer>
+          <a href="/imprint">Imprint and Privacy Policy</a>
+        </footer>
       </section>
     </main>
   </body>
