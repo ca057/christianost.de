@@ -2,22 +2,22 @@
 
 @font-face {
   font-family: Inter Regular;
-  src: url(assets/Inter-Regular.woff2) format('woff2'),
-    url(assets/Inter-Regular.woff) format('woff');
+  font-display: optional;
+  src: url(/Inter-Regular.woff2) format('woff2'),
+    url(/Inter-Regular.woff) format('woff');
 }
 
 :root {
   --color-text: #333333;
-  --color-accent: #fecb00;
   --color-background: #fafafa;
   --spacing-quarter: calc(var(--spacing) / 4);
   --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
   --spacing-double: calc(var(--spacing) * 2);
   --spacing-trice: calc(var(--spacing) * 3);
-  --font-sans-serif-system: BlinkMacSystemFont, -apple-system, 'Segoe UI',
-    Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    'Helvetica Neue';
+  --font-sans-serif: Inter Regular, BlinkMacSystemFont, -apple-system,
+    'Segoe UI', Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, 'Helvetica Neue', sans-serif;
   --width-text: 50rem;
 }
 
@@ -32,13 +32,9 @@ body {
 }
 
 body {
-  font: 18px/1.5 var(--font-sans-serif-system), sans-serif;
+  font: 18px/1.5 var(--font-sans-serif);
   color: var(--color-text);
   background-color: var(--color-background);
-}
-
-body.fonts-loaded {
-  font-family: Inter Regular, var(--font-sans-serif-system), sans-serif;
 }
 
 main {
@@ -110,13 +106,17 @@ ul {
   margin-top: 0;
 }
 
+li a {
+  display: block;
+}
+
 li span {
   font-size: 75%;
 }
 
 @media all and (min-width: 450px) {
   body {
-    font: 20px/1.5 var(--font-sans-serif-system), sans-serif;
+    font: 20px/1.5 var(--font-sans-serif);
   }
 
   h1 {
@@ -126,7 +126,7 @@ li span {
 
 @media all and (min-width: 550px) {
   body {
-    font: 22px/1.5 var(--font-sans-serif-system), sans-serif;
+    font: 22px/1.5 var(--font-sans-serif);
   }
 
   h1 {
