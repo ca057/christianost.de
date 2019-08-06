@@ -13,10 +13,6 @@ branches:
   only:
     - master
 
-env:
-  global:
-    - web_build_dir=dist/
-
 script:
   - npm run lint
 
