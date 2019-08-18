@@ -2,7 +2,9 @@
   "name": "christianost.de",
   "version": "1.0.0",
   "description": "christianost.de",
-  "repository": "",
+  "repository": "https://github.com/ca057/christianost.de",
+  "author": "Christian Ost <hallo@christianost.de>",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint src",
     "start": "run-p start:**",
@@ -18,8 +20,9 @@
     "build:hugo:preview": "npm run build:hugo -- -D -F",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
-  "author": "",
-  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
@@ -67,8 +70,5 @@
   },
   "resolutions": {
     "natives": "1.1.6"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
   }
 }
