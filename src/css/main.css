@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Inter Regular';
-  font-display: optional;
+  font-display: fallback;
   src: url(/Inter-Regular.woff2) format('woff2'),
     url(/Inter-Regular.woff) format('woff');
 }
@@ -13,8 +13,8 @@
   --spacing-quarter: calc(var(--spacing) / 4);
   --spacing-half: calc(var(--spacing) / 2);
   --spacing: 1rem;
-  --spacing-double: calc(var(--spacing) * 2);
-  --spacing-trice: calc(var(--spacing) * 3);
+  --spacing-2: calc(var(--spacing) * 2);
+  --spacing-3: calc(var(--spacing) * 3);
   --font-sans-serif: Inter Regular, BlinkMacSystemFont, -apple-system,
     'Segoe UI', Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, 'Helvetica Neue', sans-serif;
@@ -33,6 +33,7 @@ body {
 
 body {
   font: 18px/1.5 var(--font-sans-serif);
+  font-weight: normal;
   color: var(--color-text);
   background-color: var(--color-background);
 }
@@ -41,7 +42,7 @@ main {
   width: 100%;
   max-width: var(--width-text);
   min-height: 100vh;
-  padding: var(--spacing-double);
+  padding: var(--spacing-2);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -58,14 +59,17 @@ footer * {
 
 h1 {
   font-size: 2rem;
-  line-height: 1.5;
-  margin: var(--spacing-trice) 0 var(--spacing-double) 0;
+  line-height: 150%;
+  margin: var(--spacing-3) 0 var(--spacing-2) 0;
 }
 
-a,
+h2 {
+  margin: var(--spacing-3) 0 var(--spacing) 0;
+}
+
 p {
   margin-top: 0;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing);
 }
 
 a,
