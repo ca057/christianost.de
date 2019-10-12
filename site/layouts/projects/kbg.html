@@ -1,0 +1,14 @@
+{{ define "styles" }}
+<style></style>
+{{ end }}
+
+{{ define "main" }}
+<p>kbg</p>
+{{ end }}
+
+{{ define "scripts" }}
+{{ $script := .Site.Data.webpack.killedByGoogle }}
+{{ with $script.js }}
+<script src="{{ relURL . }}"></script>
+{{ end }}
+{{ end }}

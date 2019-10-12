@@ -1,5 +1,6 @@
 ---
 title: 'Christian Ost'
+description: 'I am a frontend developer living in Barcelona. Send me a message to hallo@christianost.de.'
 date: 2019-08-04T21:18:17+02:00
 ---
 

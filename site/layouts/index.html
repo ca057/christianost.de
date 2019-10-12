@@ -1,3 +1,11 @@
 {{ define "main" }}
-{{- .Content -}}
+<main>
+  {{ block "header" . }}{{ partial "header" . }}{{ end }}
+
+  {{- .Content -}}
+
+  {{ if ne .Params.show_footer false }}
+  {{ block "footer" . }}{{ partial "footer" . }}{{ end }}
+  {{ end }}
+</main>
 {{ end }}

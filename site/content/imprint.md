@@ -1,5 +1,6 @@
 ---
 title: 'Imprint'
+description: 'I am a frontend developer living in Barcelona. Send me a message to hallo@christianost.de.'
 date: 2019-08-05T21:25:46+02:00
 show_footer: false
 ---
