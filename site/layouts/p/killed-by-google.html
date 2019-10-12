@@ -1,9 +1,20 @@
 {{ define "styles" }}
-<style></style>
-{{ end }}
+{{ $stylesheet := .Site.Data.webpack.killedByGoogle }}
+{{ with $stylesheet.css }}
+<link href="{{ relURL . }}" rel="stylesheet" />
+{{ end }}{{ end }}
 
 {{ define "main" }}
-<p>kbg</p>
+<div>
+  <div>
+    Sort by <button>start</button> <button>duration</button>
+    <button>end</button>
+  </div>
+  <div><button>ASC</button> <button>DESC</button></div>
+</div>
+
+<div id="tooltip"></div>
+<svg id="visualisation"></svg>
 {{ end }}
 
 {{ define "scripts" }}

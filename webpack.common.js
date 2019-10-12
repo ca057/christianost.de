@@ -24,10 +24,16 @@ module.exports = {
       { test: /\.json$/, loader: 'json-loader' },
 
       {
-        loader: 'babel-loader',
         test: /\.js?$/,
-        exclude: /node_modules/,
-        query: { cacheDirectory: true },
+        // exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-modules-commonjs'],
+          },
+        },
       },
 
       {
