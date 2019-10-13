@@ -5,16 +5,26 @@
 {{ end }}{{ end }}
 
 {{ define "main" }}
-<div>
-  <div>
-    Sort by <button>start</button> <button>duration</button>
-    <button>end</button>
-  </div>
-  <div><button>ASC</button> <button>DESC</button></div>
-</div>
+<main>
+  <h1>Time kills Google</h1>
 
-<div id="tooltip"></div>
-<svg id="visualisation"></svg>
+  <p>
+    <a href="https://killedbygoogle.com/">Killed by Google</a> lists all product
+    Google started and stopped over time. This visualisation displays the data
+    on a timeline.
+  </p>
+
+  <div class="controls">
+    <div>
+      Sort by <button>start</button> <button>duration</button>
+      <button>end</button>
+    </div>
+    <div><button>ASC</button> <button>DESC</button></div>
+  </div>
+
+  <div id="tooltip"></div>
+  <svg id="visualisation"></svg>
+</main>
 {{ end }}
 
 {{ define "scripts" }}

@@ -2,19 +2,19 @@ import * as d3 from 'd3';
 
 import './css/killed-by-google.css';
 
+const SVG_ID = '#visualisation';
+const visElement = document.querySelector(SVG_ID);
 const KBG_JSON =
   'https://raw.githubusercontent.com/codyogden/killedbygoogle/master/graveyard.json';
 
 const MARGINS = { top: 20, right: 20, bottom: 20, left: 20 };
-const WIDTH = 600;
+const { width: WIDTH, height } = visElement.getBoundingClientRect();
 const HEIGHT = 750;
-const INNER_WIDTH = WIDTH - MARGINS.left - MARGINS.right;
-const INNER_HEIGHT = HEIGHT - MARGINS.top - MARGINS.bottom;
 
 const vis = d3
-  .select('#visualisation')
+  .select(SVG_ID)
   .attr('width', WIDTH)
-  .attr('height', HEIGHT)
+  .attr('height', Math.max(HEIGHT, height))
   .attr('transform', `translate(${MARGINS.left},${MARGINS.top})`);
 
 d3.json(KBG_JSON).then(data => {
@@ -71,7 +71,7 @@ d3.json(KBG_JSON).then(data => {
         .style('left', `${d3.event.pageX}px`)
         .style('top', `${d3.event.pageY - 28}px`);
     })
-    .on('mouseleave', d => {
+    .on('mouseleave', () => {
       tooltip
         .transition(d3.easeExpIn)
         .duration(300)

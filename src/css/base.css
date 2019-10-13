@@ -1,0 +1,29 @@
+@import 'normalize.css';
+
+@font-face {
+  font-family: 'Inter Regular';
+  font-display: fallback;
+  src: url(/Inter-Regular.woff2) format('woff2'),
+    url(/Inter-Regular.woff) format('woff');
+}
+
+:root {
+  --font-sans-serif: Inter Regular, BlinkMacSystemFont, -apple-system,
+    'Segoe UI', Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, 'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body {
+  font: 18px/1.5 var(--font-sans-serif);
+  font-weight: normal;
+}
