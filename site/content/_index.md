@@ -1,11 +1,11 @@
 ---
-title: 'Christian Ost'
-date: 2019-08-04T21:18:17+02:00
+title: "Christian Ost"
+date: 2020-02-13T19:43:17+02:00
 ---
 
-Hi! I’m a developer living in [Barcelona](https://en.wikipedia.org/wiki/Barcelona), currently building user interfaces for [Typeform](https://typeform.com).
+Hi! I’m a freelance software developer working for the [SMO GmbH](https://www.smo.de/), among others I was previously working on user interfaces for [Typeform](https://typeform.com) in Barcelona.
 
-Send me a message to [hallo@christianost.de](mailto:hallo@christianost.de) (if possible, use my [PGP key](http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x41980624AEC84355) to encrypt your email). I’m [ca057](https://github.com/ca057) on GitHub, [christianost](https://keybase.io/christianost) on keybase and [@\_christianost](https://twitter.com/_christianost) on Twitter.
+Do you have an exicting project? Send me a message to [hallo@christianost.de](mailto:hallo@christianost.de) (if possible, use my [PGP key](http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x41980624AEC84355) to encrypt your email). I’m [ca057](https://github.com/ca057) on GitHub, [christianost](https://keybase.io/christianost) on keybase and [@\_christianost](https://twitter.com/_christianost) on Twitter.
 
 ## Talks
 
