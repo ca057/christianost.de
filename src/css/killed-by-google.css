@@ -1,9 +1,12 @@
 @import './base.css';
 
 main {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 80%;
   max-width: 750px;
+  min-height: 100vh;
 }
 
 .controls {
@@ -15,15 +18,23 @@ main {
 svg {
   display: block;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
+  flex: 1;
 }
 
-.line {
+svg line {
   stroke: grey;
+  stroke-width: 3px;
+  stroke-linecap: round;
 }
 
-line:hover {
+svg line:hover {
   stroke: red;
+}
+
+svg line.line_loading:hover {
+  stroke: grey;
 }
 
 #tooltip {

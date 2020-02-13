@@ -1,4 +1,4 @@
-[
+export default [
   {
     "dateClose": "2019-11-22",
     "dateOpen": "2018-01-26",

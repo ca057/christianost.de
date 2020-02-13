@@ -2,16 +2,29 @@
 {{ $stylesheet := .Site.Data.webpack.killedByGoogle }}
 {{ with $stylesheet.css }}
 <link href="{{ relURL . }}" rel="stylesheet" />
-{{ end }}{{ end }}
+{{ end }}
+{{ end }}
+
+{{ define "scripts" }}
+<link
+  rel="preload"
+  href="https://raw.githubusercontent.com/codyogden/killedbygoogle/master/graveyard.json"
+  as="fetch"
+/>
+{{ $script := .Site.Data.webpack.killedByGoogle }}
+{{ with $script.js }}
+<script src="{{ relURL . }}"></script>
+{{ end }}
+{{ end }}
 
 {{ define "main" }}
 <main>
   <h1>Time kills Google</h1>
 
   <p>
-    <a href="https://killedbygoogle.com/">Killed by Google</a> lists all product
-    Google started and stopped over time. This visualisation displays the data
-    on a timeline.
+    <a href="https://killedbygoogle.com/">Killed by Google</a> lists all
+    products Google started and stopped over time. Here you can explore them on
+    a timeline.
   </p>
 
   <div class="controls">
@@ -25,11 +38,4 @@
   <div id="tooltip"></div>
   <svg id="visualisation"></svg>
 </main>
-{{ end }}
-
-{{ define "scripts" }}
-{{ $script := .Site.Data.webpack.killedByGoogle }}
-{{ with $script.js }}
-<script src="{{ relURL . }}"></script>
-{{ end }}
 {{ end }}
