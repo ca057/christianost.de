@@ -18,6 +18,7 @@ script:
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_9b935b919483_key -iv $encrypted_9b935b919483_iv -in christianost-travis.enc -out christianost-travis -d
+  - chmod 400 christianost-travis
   - eval "$(ssh-agent -s)"
   - ssh-add christianost-travis
 

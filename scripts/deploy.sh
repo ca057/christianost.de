@@ -4,8 +4,6 @@ set -eo pipefail
 echo "Starting deployment."
 echo ""
 
-chmod 400 christianost-travis
-
 if [ ! -d "dist" ]; then
   echo "ERROR: The build directory does not exist."
   exit 1
