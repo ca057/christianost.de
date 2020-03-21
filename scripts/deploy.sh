@@ -13,4 +13,4 @@ fi
 
 echo "Deploying assets to server."
 
-rsync --progress -r -e "ssh -i christianost-travis" dist/* $deploy_user@$deploy_host:$deploy_path
+rsync --progress -r dist/* $deploy_user@$deploy_host:$deploy_path
