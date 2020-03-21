@@ -5,6 +5,9 @@ node_js:
 
 cache: npm
 
+addons:
+  ssh_known_hosts: $deploy_host
+
 branches:
   only:
     - master
