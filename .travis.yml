@@ -5,9 +5,6 @@ node_js:
 
 cache: npm
 
-addons:
-  ssh_known_hosts: $deploy_host
-
 branches:
   only:
     - master
@@ -18,6 +15,7 @@ script:
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_9b935b919483_key -iv $encrypted_9b935b919483_iv -in christianost-travis.enc -out christianost-travis -d
+  - echo $deploy_host >> $HOME/.ssh/known_hosts
 
 deploy:
   - provider: script
