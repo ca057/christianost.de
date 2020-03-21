@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-set -ev
+set -eo pipefail
 
 echo "Starting deployment."
 echo ""
+
+chmod 400 christianost-travis
 
 if [ ! -d "dist" ]; then
   echo "ERROR: The build directory does not exist."
   exit 1
 fi
 
-echo "DEPLOY: Start deploying assets to remote."
+echo "Deploying assets to server."
 
-export SSHPASS=$deploy_password
-
-sshpass -e scp -o stricthostkeychecking=no -r dist/. $deploy_user@$deploy_host:$deploy_path
-
-export SSHPASS=
+rsync --progress -r -e "ssh -i christianost-travis" dist/* $deploy_user@$deploy_host:$deploy_path

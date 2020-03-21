@@ -1,13 +1,8 @@
 language: node_js
 node_js:
-  - node
+  - node:lts
 
 cache: npm
-
-addons:
-  apt:
-    packages:
-      - sshpass
 
 branches:
   only:
@@ -15,9 +10,10 @@ branches:
 
 script:
   - npm run lint
+  - npm run build
 
 before_deploy:
-  - npm run build
+  - openssl aes-256-cbc -K $encrypted_9b935b919483_key -iv $ encrypted_9b935b919483_iv -in christianost-travis.enc -out christianost-travis -d
 
 deploy:
   - provider: script
