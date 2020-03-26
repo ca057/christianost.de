@@ -6,7 +6,7 @@ node_js:
 cache: npm
 
 addons:
-  ssh_known_hosts: kaus.uberspace.de
+  ssh_known_hosts: halley.uberspace.de
 
 branches:
   only:
