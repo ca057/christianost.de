@@ -6,6 +6,7 @@
   "author": "Christian Ost <hallo@christianost.de>",
   "license": "MIT",
   "scripts": {
+    "clean": "hugo --gc && rimraf dist",
     "lint": "eslint src",
     "start": "run-p start:**",
     "start:hugo": "hugo -d ../dist -s site -vw",
@@ -16,12 +17,13 @@
     "prebuild": "rimraf dist",
     "build": "npm run build:webpack && npm run build:hugo",
     "build:preview": "npm run build:webpack && npm run build:hugo:preview",
-    "build:hugo": "hugo -d ../dist -s site -v",
+    "build:hugo": "hugo -d ../dist -s site -v --minify --gc",
     "build:hugo:preview": "npm run build:hugo -- -D -F",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "vanilla-lazyload": "^14.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -43,7 +45,7 @@
     "exports-loader": "^0.7.0",
     "fancy-log": "^1.3.2",
     "file-loader": "^4.3.0",
-    "hugo-bin": "^0.43.6",
+    "hugo-bin": "^0.56.3",
     "imports-loader": "^0.8.0",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.13.1",

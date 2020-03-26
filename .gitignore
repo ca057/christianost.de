@@ -3,3 +3,4 @@ dist/
 site/data/webpack.json
 .env
 .DS_Store
+.vscode

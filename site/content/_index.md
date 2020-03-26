@@ -1,6 +1,9 @@
 ---
 title: "Christian Ost"
 date: 2020-02-13T19:43:17+02:00
+profile_picture:
+  src: christian.jpg
+  alt: Profile picture of Christian
 ---
 
 Hi! I’m a freelance software developer from Berlin focusing on building accessible and interactive web and mobile applications with the [SMO GmbH](https://www.smo.de/). Amongst others I was previously working on user interfaces for [Typeform](https://typeform.com) in Barcelona.
