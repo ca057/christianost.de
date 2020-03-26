@@ -114,9 +114,8 @@ li span {
 
 #profile_picture {
   float: right;
-  /* min-width: 100px; */
-  width: 200px;
-  height: 250px;
+  width: 120px;
+  height: 150px;
   border-radius: 8px;
   margin: 0 0 1rem 1.5rem;
 }
@@ -129,6 +128,11 @@ li span {
   h1 {
     font-size: 2.5rem;
   }
+
+  #profile_picture {
+    width: 160px;
+    height: 200px;
+  }
 }
 
 @media all and (min-width: 550px) {
@@ -138,5 +142,10 @@ li span {
 
   h1 {
     font-size: 3rem;
+  }
+
+  #profile_picture {
+    width: 200px;
+    height: 250px;
   }
 }

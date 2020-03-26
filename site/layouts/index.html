@@ -4,8 +4,6 @@
   {{ $fullSize := $original.Resize "x500 q95" }}
   <div>
     <img class="lazyload" id="profile_picture" src="{{ $thumbnail.RelPermalink }}" data-src="{{ $fullSize.RelPermalink }}" alt="{{ .Params.profile_picture.alt }}">
-    <!-- <img id="profile_picture" src="{{ $fullSize.RelPermalink }}" alt="{{ .Params.profile_picture.alt }}"> -->
-    <!-- <img id="profile_picture" src="{{ $original.RelPermalink }}" alt="{{ .Params.profile_picture.alt }}"> -->
     {{- .Content -}}
   </div>
 {{ end }}
