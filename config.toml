@@ -11,3 +11,10 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 [caches.images]
 dir = ":resourceDir/_gen"
 maxAge = "10m"
+
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = "10m"
+
+[build]
+  useResourceCacheWhen = "never"

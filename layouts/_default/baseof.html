@@ -18,8 +18,8 @@
   <link rel="apple-touch-icon" href="icon192.png">
 
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
-  {{ $style := resources.Get "style.css" }}
-  {{/*  {{ $style := $css | resources.PostCSS }}  */}}
+  {{ $css := resources.Get "style.css" }}
+  {{ $style := $css | resources.PostCSS }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
 
   <!-- {{ $stylesheet := .Site.Data.webpack.main }}
