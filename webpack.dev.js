@@ -15,7 +15,7 @@ module.exports = merge(common, {
 
   devServer: {
     port: process.env.PORT || 3000,
-    contentBase: path.join(process.cwd(), "./dist"),
+    contentBase: path.join(process.cwd(), "./public"),
     watchContentBase: true,
     quiet: false,
     open: true,
@@ -27,8 +27,8 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
-        "dist/**/*.js",
-        "dist/**/*.css",
+        "public/**/*.js",
+        "public/**/*.css",
         "content/webpack.json"
       ]
     }),

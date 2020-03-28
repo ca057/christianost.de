@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     "postcss-import": {},
     "postcss-preset-env": {
-      browsers: "defaults"
+      browsers: "last 2 versions"
     },
     autoprefixer: {}
   }
