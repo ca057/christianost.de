@@ -9,7 +9,7 @@
   <title>{{ $.Site.Title }}</title>
   <meta
     name="description"
-    content="I am a frontend developer living in Barcelona. Send me a message to hallo@christianost.de."
+    content="Hey! I’m a freelance software developer from Berlin. Send me a message to hallo@christianost.de."
   />
   <meta name="theme-color" content="#fecb00" />
   <link rel="manifest" href="manifest.webmanifest" />
@@ -17,10 +17,15 @@
   <link rel="icon" type="image/png" href="icon32.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="icon192.png">
 
-  {{ $stylesheet := .Site.Data.webpack.main }}
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+  {{ $style := resources.Get "style.css" }}
+  {{/*  {{ $style := $css | resources.PostCSS }}  */}}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+  <!-- {{ $stylesheet := .Site.Data.webpack.main }}
   {{ with $stylesheet.css }}
     <link href="{{ relURL . }}" rel="stylesheet">
-  {{ end }}
+  {{ end }} -->
 </head>
 
 <body>

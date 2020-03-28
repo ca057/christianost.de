@@ -6,10 +6,10 @@
   "author": "Christian Ost <hallo@christianost.de>",
   "license": "MIT",
   "scripts": {
-    "clean": "hugo --gc --config site/config.toml && rimraf dist",
+    "clean": "hugo --gc && rimraf dist",
     "lint": "eslint src",
     "start": "run-p start:**",
-    "start:hugo": "hugo -d ../dist -s site -vw --gc",
+    "start:hugo": "hugo -d dist -vw --gc",
     "start:webpack": "webpack-dev-server --config webpack.dev.js --hot",
     "preview": "run-p preview:**",
     "preview:hugo": "npm run start:hugo -- -D -F",
@@ -17,7 +17,7 @@
     "prebuild": "rimraf dist",
     "build": "npm run build:webpack && npm run build:hugo",
     "build:preview": "npm run build:webpack && npm run build:hugo:preview",
-    "build:hugo": "hugo -d ../dist -s site -v --minify --gc",
+    "build:hugo": "hugo -d dist -v --minify",
     "build:hugo:preview": "npm run build:hugo -- -D -F",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },

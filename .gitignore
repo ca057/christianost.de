@@ -1,6 +1,6 @@
 node_modules/
 dist/
-site/data/webpack.json
+data/webpack.json
 .env
 .DS_Store
 .vscode
