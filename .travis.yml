@@ -11,8 +11,8 @@ branches:
     - master
 
 script:
-  - npm run lint
-  - npm run build
+  - yarn run lint
+  - yarn run build
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_9b935b919483_key -iv $encrypted_9b935b919483_iv -in christianost-travis.enc -out christianost-travis -d

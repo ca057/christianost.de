@@ -12,13 +12,13 @@
     "start:hugo": "hugo -vw --gc",
     "start:webpack": "webpack-dev-server --config webpack.dev.js --hot",
     "preview": "run-p preview:**",
-    "preview:hugo": "npm run start:hugo -- -D -F",
-    "preview:webpack": "npm run start:webpack",
+    "preview:hugo": "yarn run start:hugo -- -D -F",
+    "preview:webpack": "yarn run start:webpack",
     "prebuild": "yarn run clean",
-    "build": "npm run build:webpack && npm run build:hugo",
-    "build:preview": "npm run build:webpack && npm run build:hugo:preview",
+    "build": "yarn run build:webpack && yarn run build:hugo",
+    "build:preview": "yarn run build:webpack && yarn run build:hugo:preview",
     "build:hugo": "hugo -v --minify --gc",
-    "build:hugo:preview": "npm run build:hugo -- -D -F",
+    "build:hugo:preview": "yarn run build:hugo -- -D -F",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "dependencies": {
