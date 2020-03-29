@@ -1,7 +1,5 @@
 const webpack = require("webpack");
 const path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = {
@@ -27,18 +25,6 @@ module.exports = {
         test: /\.js?$/,
         exclude: /node_modules/,
         query: { cacheDirectory: true }
-      },
-
-      {
-        test: /\.(sa|sc|c)ss$/,
-        exclude: /node_modules/,
-        use: [
-          "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
       }
     ]
   },
@@ -53,14 +39,6 @@ module.exports = {
       filename: "webpack.json",
       path: path.join(process.cwd(), "data"),
       prettyPrint: true
-    }),
-
-    new CopyWebpackPlugin([
-      {
-        from: "./src/fonts/",
-        to: "fonts/",
-        flatten: true
-      }
-    ])
+    })
   ]
 };
