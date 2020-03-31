@@ -6,11 +6,13 @@ profile_picture:
   alt: Profile picture of Christian
 ---
 
-Hi! I’m a freelance software developer from Berlin focusing on building accessible and interactive web and mobile applications with the [SMO GmbH](https://www.smo.de/). Amongst others I was previously working on user interfaces for [Typeform](https://typeform.com) in Barcelona.
+Hi! I’m a freelance software developer from Berlin focusing on building accessible and interactive web and mobile applications with the [SMO GmbH](https://www.smo.de/). Amongst others I was previously working for [Typeform](https://typeform.com) in Barcelona.
 
-Do you have an exicting project?
+Do you have an exciting project?
 
-Send me a message to [hallo@christianost.de](mailto:hallo@christianost.de) (if possible, use my [PGP key](http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x41980624AEC84355) to encrypt your email). I’m [ca057](https://github.com/ca057) on GitHub, [christianost](https://keybase.io/christianost) on keybase and [@\_christianost](https://twitter.com/_christianost) on Twitter.
+Send me a message to [hallo@christianost.de](mailto:hallo@christianost.de) (please use my [PGP key](http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x41980624AEC84355)).
+
+I’m [ca057](https://github.com/ca057) on GitHub, [christianost](https://keybase.io/christianost) on keybase and [@\_christianost](https://twitter.com/_christianost) on Twitter.
 
 ## Talks
 
