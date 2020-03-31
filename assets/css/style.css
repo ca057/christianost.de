@@ -32,7 +32,7 @@ body {
 }
 
 body {
-  font: 16px/1.5 var(--font-sans-serif);
+  font: 14px/1.5 var(--font-sans-serif);
   font-weight: normal;
   color: var(--color-text);
   background-color: var(--color-background);
@@ -62,10 +62,13 @@ h1 {
   line-height: 150%;
   margin: var(--spacing-3) 0 var(--spacing-2) 0;
 }
-
 h2 {
   font-size: 1.5rem;
   margin: var(--spacing-3) 0 var(--spacing) 0;
+}
+h3 {
+  font-size: 1.25rem;
+  margin: var(--spacing) 0;
 }
 
 p {
@@ -105,14 +108,6 @@ a:active::selection {
 ul {
   margin-top: 0;
 }
-/* 
-li a {
-  display: block;
-} */
-
-li span {
-  font-size: 75%;
-}
 
 #profile_picture {
   float: right;
@@ -124,7 +119,7 @@ li span {
 
 @media all and (min-width: 450px) {
   body {
-    font: 20px/1.5 var(--font-sans-serif), sans-serif;
+    font: 16px/1.5 var(--font-sans-serif), sans-serif;
   }
 
   h1 {
@@ -138,6 +133,10 @@ li span {
 }
 
 @media all and (min-width: 550px) {
+  body {
+    font: 18px/1.5 var(--font-sans-serif), sans-serif;
+  }
+
   #profile_picture {
     width: 200px;
     height: 250px;

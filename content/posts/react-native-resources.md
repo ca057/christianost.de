@@ -12,7 +12,7 @@ This is a growing list of resources around developing apps with React Native.
 
 - [Jest](https://jestjs.io/docs/en/tutorial-react-native "Setup Jest with React Native"): _"Jest is a delightful JavaScript Testing Framework with a focus on simplicity."_
   - Supports snapshot testing out of the box.
-  - Can be used to run both unit and acceptance tests (e.g. with [Detox](#acceptance/integration-testing))
+  - Can be used to run both unit and acceptance tests (e.g. with [Detox](#acceptanceintegration-testing))
 
 ### Unit/Component testing
 
@@ -38,7 +38,5 @@ This is a growing list of resources around developing apps with React Native.
 
 - [React Native Debugger](https://github.com/jhen0409/react-native-debugger): _"The standalone app based on official debugger of React Native, and includes React Inspector / Redux DevTools"_
 - [Flipper](https://fbflipper.com/): _"Flipper is a platform for debugging iOS, Android and React Native apps."_
-
-<!-- footnotes -->
 
 [^gbt]: According to Wikipedia, in gray-box testing is a combination of white-box (detailed insights into the SUT) and black-box (only high-level understanding of SUT) testing. This means, the tester has some information about the internals of the application to test.
