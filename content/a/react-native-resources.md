@@ -19,6 +19,7 @@ This is a growing list of resources around developing apps with React Native.
 - [Native Testing Library](https://www.native-testing-library.com/): _"Simple and complete React Native testing utilities that encourage good testing practices"_
   - Implementation of [Testing Library](https://testing-library.com) for React Native.
 - [Using enzyme to Test Components in React Native](https://github.com/enzymejs/enzyme/blob/master/docs/guides/react-native.md): _"Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output."_
+  - Needs an adapter for React and an emulated DOM like [JSDOM](https://github.com/jsdom/jsdom).
 
 ### Acceptance/Integration testing
 
