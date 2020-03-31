@@ -32,7 +32,7 @@ body {
 }
 
 body {
-  font: 18px/1.5 var(--font-sans-serif);
+  font: 16px/1.5 var(--font-sans-serif);
   font-weight: normal;
   color: var(--color-text);
   background-color: var(--color-background);
@@ -64,6 +64,7 @@ h1 {
 }
 
 h2 {
+  font-size: 1.5rem;
   margin: var(--spacing-3) 0 var(--spacing) 0;
 }
 
@@ -136,14 +137,6 @@ li span {
 }
 
 @media all and (min-width: 550px) {
-  body {
-    font: 22px/1.5 var(--font-sans-serif), sans-serif;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
   #profile_picture {
     width: 200px;
     height: 250px;
