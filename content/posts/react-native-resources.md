@@ -39,4 +39,4 @@ This is a growing list of resources around developing apps with React Native.
 - [React Native Debugger](https://github.com/jhen0409/react-native-debugger): _"The standalone app based on official debugger of React Native, and includes React Inspector / Redux DevTools"_
 - [Flipper](https://fbflipper.com/): _"Flipper is a platform for debugging iOS, Android and React Native apps."_
 
-[^gbt]: According to Wikipedia, in gray-box testing is a combination of white-box (detailed insights into the SUT) and black-box (only high-level understanding of SUT) testing. This means, the tester has some information about the internals of the application to test.
+[^gbt]: Gray-box testing is a combination of white-box (detailed insights into the SUT) and black-box (only high-level understanding of SUT) testing. This means, the tester has some information about the internals of the application to test and can apply them when developing tests.
