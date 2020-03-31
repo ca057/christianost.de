@@ -76,6 +76,7 @@ p {
 a,
 a:link,
 a:visited {
+  display: inline;
   color: var(--color-text);
   text-decoration: underline;
   text-decoration-skip: edges;
@@ -104,10 +105,10 @@ a:active::selection {
 ul {
   margin-top: 0;
 }
-
+/* 
 li a {
   display: block;
-}
+} */
 
 li span {
   font-size: 75%;

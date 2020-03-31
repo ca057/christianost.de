@@ -10,7 +10,7 @@ This is a growing list of resources around developing apps with React Native.
 
 ### Test runners
 
-- [Jest](https://jestjs.io/docs/en/tutorial-react-native): _"Jest is a delightful JavaScript Testing Framework with a focus on simplicity."_
+- [Jest](https://jestjs.io/docs/en/tutorial-react-native "Setup Jest with React Native"): _"Jest is a delightful JavaScript Testing Framework with a focus on simplicity."_
   - Supports snapshot testing out of the box.
   - Can be used to run both unit and acceptance tests (e.g. with [Detox](#acceptance/integration-testing))
 

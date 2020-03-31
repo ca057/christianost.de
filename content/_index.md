@@ -16,4 +16,4 @@ I’m [ca057](https://github.com/ca057) on GitHub, [christianost](https://keybas
 
 ## Talks
 
-- [Introduction to the Web Payment Ecosystem and the Payment Request API](/talks/2019-06-27_bcn-js_web-payment-ecosystem.pdf)<span>27 June 2019 at BarcelonaJS</span>
+- [Introduction to the Web Payment Ecosystem and the Payment Request API](/talks/2019-06-27_bcn-js_web-payment-ecosystem.pdf) (27 June 2019 at BarcelonaJS)

@@ -9,7 +9,7 @@
     "clean": "hugo --gc && rimraf public",
     "lint": "eslint src",
     "start": "run-p start:**",
-    "start:hugo": "hugo -vw --gc",
+    "start:hugo": "hugo -vwDEF --gc",
     "start:webpack": "webpack-dev-server --config webpack.dev.js --hot",
     "preview": "run-p preview:**",
     "preview:hugo": "yarn run start:hugo -- -D -F",
