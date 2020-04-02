@@ -34,6 +34,11 @@ This is a growing list of resources around developing apps with React Native.
 
 - [Storybook for React Native](https://storybook.js.org/docs/guides/guide-react-native/): _"Storybook is a user interface development environment and playground for UI components."_
 
+## CI / CD / Release automation
+
+- [fastlane](https://fastlane.tools): _"App automation done right"_
+- [Bitrise](https://www.bitrise.io/): _"Build better mobile applications, faster"_
+
 ## Developer tools
 
 - [React Native Debugger](https://github.com/jhen0409/react-native-debugger): _"The standalone app based on official debugger of React Native, and includes React Inspector / Redux DevTools"_
