@@ -1,0 +1,31 @@
+---
+import "../styles/variables.css";
+
+const { pathname } = Astro.url;
+const showBackButton = pathname !== "/";
+const isOnImprint = pathname.includes("imprint");
+---
+
+<footer>
+  {showBackButton && <a href="/">{"<- back"}</a>}
+  {
+    !isOnImprint && (
+      <a href="/imprint" id="imprint">
+        Imprint
+      </a>
+    )
+  }
+</footer>
+<style>
+  footer {
+    margin-top: auto;
+    font-size: 75%;
+    padding: var(--spacing) 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #imprint {
+    margin-left: auto;
+  }
+</style>
