@@ -1,6 +1,5 @@
 node_modules/
 dist/
-public/
 data/webpack.json
 .env
 .DS_Store

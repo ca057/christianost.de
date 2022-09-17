@@ -6,38 +6,53 @@ import UListSection from "../components/UListSection.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import profilePicture from "./assets/christian-ost.jpg";
+
+const talks = [
+  {
+    name: "Introduction to the Web Payment Ecosystem and the Payment Request API",
+    link: "/talks/2019-06-27_bcn-js_web-payment-ecosystem.pdf",
+    dateAndTime: "June 2019 at BarcelonaJS",
+  },
+];
 ---
 
 <Layout title="christianost.de">
-    <h1>Christian Ost</h1>
-    <section>
-      <div>
-        <p>
-          Hi! I’m a lead mobile engineer at <a href="https://forget.finance"
-            >Forget Finance</a
-          >. Amongst others I was previously freelancing for <a
-            href="https://smo.de">SMO GmbH</a
-          > and working for <a href="https://typeform.com">Typeform</a> in Barcelona.
-        </p>
-        <p>
-          I’m <a href="https://github.com/ca057">ca057</a> on GitHub and <a
-            href="https://twitter.com/_christianost">@_christianost</a
-          > on Twitter. You can reach me via <a
-            href="mailto:hallo@christianost.de">hallo@christianost.de</a
-          > (please use <a href="">my GPG key</a>).
-        </p>
-      </div>
-      <Image
-        src={profilePicture}
-        alt="Profile picture"
-        aspectRatio="4:5"
-        id="profile-picture"
-      />
-    </section>
-    <UListSection title="Talks">
-      <li>huhu</li>
-    </UListSection>
-    <Footer />
+  <h1>Christian Ost</h1>
+  <section>
+    <div>
+      <p>
+        Hi! I’m a lead mobile engineer at <a href="https://forget.finance"
+          >Forget Finance</a
+        >. Amongst others I was previously freelancing for <a
+          href="https://smo.de">SMO GmbH</a
+        > and working for <a href="https://typeform.com">Typeform</a> in Barcelona.
+      </p>
+      <p>
+        I’m <a href="https://github.com/ca057">ca057</a> on GitHub and <a
+          href="https://twitter.com/_christianost">@_christianost</a
+        > on Twitter. You can reach me via <a
+          href="mailto:hallo@christianost.de">hallo@christianost.de</a
+        > (please use <a href="">my GPG key</a>).
+      </p>
+    </div>
+    <Image
+      src={profilePicture}
+      alt="Profile picture"
+      aspectRatio="4:5"
+      id="profile-picture"
+    />
+  </section>
+  <UListSection title="Talks">
+    {
+      talks.map((talk) => (
+        <li class="list-talks_item">
+          <a href={talk.link}>{talk.name}</a>
+          {talk.dateAndTime}
+        </li>
+      ))
+    }
+  </UListSection>
+  <Footer />
 </Layout>
 
 <style>
@@ -45,6 +60,10 @@ import profilePicture from "./assets/christian-ost.jpg";
     display: grid;
     grid-template-columns: 1fr max-content;
     gap: var(--spacing);
+  }
+
+  .list-talks_item > a {
+    display: block;
   }
 
   #profile-picture {
