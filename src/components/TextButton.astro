@@ -1,0 +1,33 @@
+---
+import "../styles/variables.css";
+
+export interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props as Props;
+---
+
+<button id={id}><slot /></button>
+
+<style>
+  button {
+    border: none;
+    color: var(--color-text);
+    background-color: transparent;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    text-decoration: underline;
+    text-decoration-skip: edges;
+  }
+
+  button:focus,
+  button:hover,
+  button:active {
+    text-decoration: none;
+    background-color: var(--color-text);
+    color: var(--color-bg);
+  }
+</style>

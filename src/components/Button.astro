@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "@astrojs/image/components";
+import "../styles/variables.css";
+
+export interface Props extends HTMLAttributes {}
+
+const props = Astro.props as Props;
+---
+
+<button {...props}><slot /></button>
+
+<style>
+  button {
+    /* color: var(--color-text); */
+    color: var(--color-text);
+    background-color: transparent;
+    font: inherit;
+    border: 2px solid var(--color-text);
+    border-radius: 4px;
+  }
+
+  button:focus,
+  button:hover,
+  button:active {
+  }
+</style>

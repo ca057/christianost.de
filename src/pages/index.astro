@@ -3,6 +3,7 @@ import "../styles/variables.css";
 import { Image } from "@astrojs/image/components";
 
 import UListSection from "../components/UListSection.astro";
+import GpgKey from "../components/GpgKey.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import profilePicture from "./assets/christian-ost.jpg";
@@ -32,7 +33,7 @@ const talks = [
           href="https://twitter.com/_christianost">@_christianost</a
         > on Twitter. You can reach me via <a
           href="mailto:hallo@christianost.de">hallo@christianost.de</a
-        > (please use <a href="">my GPG key</a>).
+        > (please use <GpgKey>my GPG key</GpgKey>).
       </p>
     </div>
     <Image
@@ -56,6 +57,11 @@ const talks = [
 </Layout>
 
 <style>
+  @media (prefers-color-scheme: dark) {
+    img {
+      filter: brightness(0.8);
+    }
+  }
   section {
     display: grid;
     grid-template-columns: 1fr max-content;

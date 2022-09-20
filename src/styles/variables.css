@@ -9,11 +9,13 @@
 
   --color-text: #333333;
   --color-bg: #fafafa;
+  --color-bg-1: #c1c1c1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: #f0f0f0;
     --color-bg: #333333;
+    --color-bg-1: #666666;
   }
 }
