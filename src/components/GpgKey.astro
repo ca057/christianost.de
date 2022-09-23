@@ -2,8 +2,9 @@
 import "../styles/variables.css";
 import { gpgKey } from "../data/gpg-key";
 import Code from "../components/Code.astro";
-import Button from "../components/Button.astro";
 import TextButton from "../components/TextButton.astro";
+import IconButton from "../components/IconButton.astro";
+import * as Icon from "@astropub/icons";
 
 const buttonOpenId = "gpg-key_btn-open";
 const buttonCloseId = "gpg-key_btn-close";
@@ -17,9 +18,14 @@ const dialogId = "gpg-key_dlg";
 
 <dialog id={dialogId} data-a11y-dialog={dialogId}>
   <div>
-    <!-- TODO: make it icon buttons -->
-    <Button id={buttonCopyId}>Copy</Button>
-    <Button id={buttonCloseId}>Close</Button>
+    <div class="row">
+      <IconButton id={buttonCopyId}>
+        <Icon.Copy size="24" />
+      </IconButton>
+      <IconButton id={buttonCloseId}>
+        <Icon.Cross1 size="24" />
+      </IconButton>
+    </div>
     <div id="key">
       <Code>{gpgKey}</Code>
     </div>
@@ -63,6 +69,7 @@ const dialogId = "gpg-key_dlg";
 </script>
 
 <style>
+  /* TODO: backdop style */
   @media (prefers-reduced-motion: no-preference) {
     @keyframes slide-in-up {
       from {
@@ -83,11 +90,14 @@ const dialogId = "gpg-key_dlg";
   }
 
   dialog > div {
-    display: grid;
-    grid-template-areas:
-      "copy close"
-      "key key";
-    gap: 0 var(--spacing);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   #key {
