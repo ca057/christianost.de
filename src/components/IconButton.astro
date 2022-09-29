@@ -15,9 +15,10 @@ const uniqueId = id ?? `icon-bttn-${Math.random().toString()}`; // FIXME:
 </button>
 
 <script define:vars={{ uniqueId, onPress }}>
-  if (!onPress) return;
-  const button = document.getElementById(uniqueId);
-  button.addEventListener("click", onPress);
+  if (onPress) {
+    const button = document.getElementById(uniqueId);
+    button.addEventListener("click", onPress);
+  }
 </script>
 
 <style>

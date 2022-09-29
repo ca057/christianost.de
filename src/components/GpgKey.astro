@@ -43,6 +43,7 @@ const dialogId = "gpg-key_dlg";
     buttonCloseId,
     buttonCopyId,
     dialogId,
+    gpgKey,
   }}
 >
   const dialog = document.getElementById(dialogId);
@@ -57,8 +58,17 @@ const dialogId = "gpg-key_dlg";
     dialog.close();
   });
 
-  document.getElementById(buttonCopyId).addEventListener("click", () => {
-    // TODO: copy to clipboard
+  document.getElementById(buttonCopyId).addEventListener("click", async () => {
+    if (!navigator.clipboard) {
+      // TODO: show error
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(gpgKey);
+      // TODO: show success
+    } catch (error) {
+      // TODO: show error
+    }
   });
 
   dialog.addEventListener("click", (event) => {
