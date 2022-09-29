@@ -3,7 +3,6 @@ import "../styles/variables.css";
 import { Image } from "@astrojs/image/components";
 
 import UListSection from "../components/UListSection.astro";
-import GpgKey from "../components/GpgKey.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import profilePicture from "./assets/christian-ost.jpg";
@@ -33,62 +32,64 @@ const talks = [
           href="https://twitter.com/_christianost">@_christianost</a
         > on Twitter. You can reach me via <a
           href="mailto:hallo@christianost.de">hallo@christianost.de</a
-        > (please use <GpgKey>my GPG key</GpgKey>).
-      </p>
-    </div>
-    <Image
-      src={profilePicture}
-      alt="Profile picture"
-      aspectRatio="4:5"
-      id="profile-picture"
-    />
-  </section>
-  <UListSection title="Talks">
-    {
-      talks.map((talk) => (
-        <li class="list-talks_item">
-          <a href={talk.link}>{talk.name}</a>
-          {talk.dateAndTime}
-        </li>
-      ))
+        > (please use <a href="/gpg">my GPG key</a>).
+      </p><a href="gpg"> </a>
+    </div><a href="gpg">
+      <Image
+        src={profilePicture}
+        alt="Profile picture"
+        aspectRatio="4:5"
+        id="profile-picture"
+      />
+    </a>
+  </section><a href="gpg">
+    <UListSection title="Talks">
+      {
+        talks.map((talk) => (
+          <li class="list-talks_item">
+            <a href={talk.link}>{talk.name}</a>
+            {talk.dateAndTime}
+          </li>
+        ))
+      }
+    </UListSection>
+    <Footer />
+  </a>
+
+  <style>
+    @media (prefers-color-scheme: dark) {
+      img {
+        filter: brightness(0.8);
+      }
     }
-  </UListSection>
-  <Footer />
+    section {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: var(--spacing);
+    }
+
+    .list-talks_item > a {
+      display: block;
+    }
+
+    #profile-picture {
+      width: 120px;
+      height: 150px;
+      border-radius: 8px;
+    }
+
+    @media all and (min-width: 450px) {
+      #profile-picture {
+        width: 160px;
+        height: 200px;
+      }
+    }
+
+    @media all and (min-width: 550px) {
+      #profile-picture {
+        width: 200px;
+        height: 250px;
+      }
+    }
+  </style>
 </Layout>
-
-<style>
-  @media (prefers-color-scheme: dark) {
-    img {
-      filter: brightness(0.8);
-    }
-  }
-  section {
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    gap: var(--spacing);
-  }
-
-  .list-talks_item > a {
-    display: block;
-  }
-
-  #profile-picture {
-    width: 120px;
-    height: 150px;
-    border-radius: 8px;
-  }
-
-  @media all and (min-width: 450px) {
-    #profile-picture {
-      width: 160px;
-      height: 200px;
-    }
-  }
-
-  @media all and (min-width: 550px) {
-    #profile-picture {
-      width: 200px;
-      height: 250px;
-    }
-  }
-</style>

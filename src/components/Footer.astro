@@ -1,20 +1,14 @@
 ---
 import "../styles/variables.css";
 
-const { pathname } = Astro.url;
-const showBackButton = pathname !== "/";
-const isOnImprint = pathname.includes("imprint");
+const links = [
+  { path: "/", name: "Home" },
+  { path: "/imprint", name: "Imprint" },
+];
 ---
 
 <footer>
-  {showBackButton && <a href="/">{"<- back"}</a>}
-  {
-    !isOnImprint && (
-      <a href="/imprint" id="imprint">
-        Imprint
-      </a>
-    )
-  }
+  {links.map((config) => <a href={config.path}>{config.name}</a>)}
 </footer>
 <style>
   footer {
@@ -22,10 +16,9 @@ const isOnImprint = pathname.includes("imprint");
     font-size: 75%;
     padding: var(--spacing) 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
-
-  #imprint {
-    margin-left: auto;
+  footer a {
+    margin-left: var(--spacing);
   }
 </style>
