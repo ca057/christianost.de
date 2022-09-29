@@ -1,0 +1,116 @@
+---
+import "../styles/variables.css";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#333333" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="icon16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="icon32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="icon192.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+
+    <style>
+      @import url("https://rsms.me/inter/inter.css");
+
+      html {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+          "Helvetica Neue", sans-serif;
+        font-size: var(--font-size-base);
+        line-height: 1.5;
+        color: var(--color-text);
+        background-color: var(--color-bg);
+      }
+
+      @supports (font-variation-settings: normal) {
+        html {
+          font-family: "Inter var", system-ui, -apple-system, BlinkMacSystemFont,
+            "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+            "Helvetica Neue", sans-serif;
+        }
+      }
+
+      body {
+        font-weight: normal;
+      }
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      main {
+        margin: 0 auto;
+        padding: 0 var(--spacing);
+        max-width: 60ch;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      :global(h1) {
+        font-size: var(--font-size-xl);
+        font-weight: normal;
+        line-height: 150%;
+        padding: var(--spacing-3) 0 var(--spacing-2) 0;
+        margin: 0;
+      }
+
+      :global(h2) {
+        font-size: var(--font-size-lg);
+        font-weight: normal;
+        margin: var(--spacing-3) 0 var(--spacing) 0;
+      }
+      :global(h1 + h2) {
+        font-size: var(--font-size-lg);
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      :global(p) {
+        margin-top: 0;
+        margin-bottom: var(--spacing);
+      }
+
+      :global(a),
+      :global(a:link),
+      :global(a:visited) {
+        color: var(--color-text);
+        text-decoration: underline;
+        text-decoration-skip: edges;
+      }
+      :global(a:focus),
+      :global(a:hover),
+      :global(a:active) {
+        text-decoration: none;
+        background-color: var(--color-text);
+        color: var(--color-bg);
+      }
+
+      :global(code) {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
+    </style>
+  </body>
+</html>
