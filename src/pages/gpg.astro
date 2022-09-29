@@ -1,4 +1,5 @@
 ---
+import "../styles/variables.css";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import { gpgKey } from "../data/gpg-key";
@@ -11,7 +12,19 @@ import { gpgKey } from "../data/gpg-key";
       href="mailto:hallo@christianost.de">hallo@christianost.de</a
     >:
   </p>
-  <pre>{gpgKey}
-  </pre>
+  <section class="code">
+    <pre>{gpgKey}</pre>
+  </section>
   <Footer />
 </Layout>
+
+<style>
+  pre {
+    font-size: 0.8rem;
+    overflow-x: scroll;
+  }
+  .code {
+    display: flex;
+    justify-content: center;
+  }
+</style>
