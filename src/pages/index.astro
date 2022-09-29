@@ -33,28 +33,26 @@ const talks = [
         > on Twitter. You can reach me via <a
           href="mailto:hallo@christianost.de">hallo@christianost.de</a
         > (please use <a href="/gpg">my GPG key</a>).
-      </p><a href="gpg"> </a>
-    </div><a href="gpg">
-      <Image
-        src={profilePicture}
-        alt="Profile picture"
-        aspectRatio="4:5"
-        id="profile-picture"
-      />
-    </a>
-  </section><a href="gpg">
-    <UListSection title="Talks">
-      {
-        talks.map((talk) => (
-          <li class="list-talks_item">
-            <a href={talk.link}>{talk.name}</a>
-            {talk.dateAndTime}
-          </li>
-        ))
-      }
-    </UListSection>
-    <Footer />
-  </a>
+      </p>
+    </div>
+    <Image
+      src={profilePicture}
+      alt="Profile picture"
+      aspectRatio="4:5"
+      id="profile-picture"
+    />
+  </section>
+  <UListSection title="Talks">
+    {
+      talks.map((talk) => (
+        <li class="list-talks_item">
+          <a href={talk.link}>{talk.name}</a>
+          {talk.dateAndTime}
+        </li>
+      ))
+    }
+  </UListSection>
+  <Footer />
 
   <style>
     @media (prefers-color-scheme: dark) {
