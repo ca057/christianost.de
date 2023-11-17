@@ -1,11 +1,10 @@
 ---
 import "../styles/variables.css";
-import { Image } from "@astrojs/image/components";
-
+import { Image } from "astro:assets";
 import UListSection from "../components/UListSection.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
-import profilePicture from "./assets/christian-ost.jpg";
+import profilePicture from "../assets/christian-ost.jpg";
 
 const talks = [
   {
@@ -28,19 +27,15 @@ const talks = [
         > and working for <a href="https://typeform.com">Typeform</a> in Barcelona.
       </p>
       <p>
-        I’m <a href="https://github.com/ca057">ca057</a> on GitHub and <a
-          href="https://twitter.com/_christianost">@_christianost</a
-        > on Twitter. You can reach me via <a
+        You can find me as <a href="https://github.com/ca057">ca057</a> on GitHub
+        and as <a href="https://mstdn.social/@chrstnst"
+          >@chrstnst@mstdn.social</a
+        > on Mastodon. Reach out to me via <a
           href="mailto:hallo@christianost.de">hallo@christianost.de</a
-        > (please use <a href="/gpg">my GPG key</a>).
+        >.
       </p>
     </div>
-    <Image
-      src={profilePicture}
-      alt="Profile picture"
-      aspectRatio="4:5"
-      id="profile-picture"
-    />
+    <Image src={profilePicture} alt="Profile picture" id="profile-picture" />
   </section>
   <UListSection title="Talks">
     {

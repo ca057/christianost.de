@@ -1,3 +1,1 @@
-/// <reference types="@astrojs/image/client" />
-
-declare module "@astropub/icons";
+/// <reference types="astro/client" />
