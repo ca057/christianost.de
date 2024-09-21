@@ -1,0 +1,11 @@
+{
+  "name": "christianost.de",
+  "private": true,
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0-beta.1"
+  }
+}
