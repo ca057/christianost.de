@@ -1,9 +1,10 @@
-/* copied from https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* copied & adapted from https://piccalil.li/blog/a-more-modern-css-reset/ */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -31,7 +32,6 @@ ol[role="list"] {
 }
 
 body {
-  min-height: 100vh;
   line-height: 1.5;
 }
 

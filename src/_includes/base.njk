@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Christian Ost
+      {% if title %} – {{ title }}{% endif %}
+    </title>
+
+    {% set basecss %}{% include "css-reset.css" %}{% endset %}
+    <style>
+      {{ basecss | cssmin | safe }}
+    </style>
+
+  </head>
+
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
