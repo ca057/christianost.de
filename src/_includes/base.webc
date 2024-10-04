@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Christian Ost
+    </title>
+    <link rel="stylesheet" href="css-reset.css">
+    <style @raw="getBundle('css')" webc:keep></style>
+    <link rel="stylesheet" :href="getBundleFileUrl('css', 'defer')" webc:keep/>
+  </head>
+  <body @raw="content"></body>
+</html>

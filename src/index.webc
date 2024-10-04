@@ -1,7 +1,8 @@
 ---
-layout: base.njk
+layout: base.webc
 title: home
 ---
+<main>
 <h1>Christian Ost</h1>
 
 <p>Software Engineer</p>
@@ -11,3 +12,10 @@ title: home
   <li><a href="https://mstdn.social/@chrstnst">@chrstnst@mstdn.social on Mastodon</a></li>
   <li><a href="mailto:hallo@christianost.de">hallo@christianost.de</a></li>
 </ul>
+</main>
+
+<style webc:bucket="defer" webc:scoped>
+  ul {
+    background-color: red;
+  }
+</style>
