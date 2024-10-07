@@ -21,7 +21,7 @@ layout: base.webc
   <a href="/imprint">Imprint</a>
 </footer>
 
-<style webc:bucket="defer" webc:scoped>
+<style webc:bucket="defer">
   body {
     display: flex;
     flex-direction: column;

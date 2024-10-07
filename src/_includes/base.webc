@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="base.css" />
     <!-- critical css bundle -->
     <style @raw="getBundle('css')" webc:keep></style>
+
     <!-- non-critical css -->
     <link rel="stylesheet" :href="getBundleFileUrl('css', 'defer')" webc:keep />
   </head>
