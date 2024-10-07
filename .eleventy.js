@@ -47,6 +47,9 @@ export default function (eleventyConfig) {
 
   //   return code.toString("utf-8");
   // });
+  //
+  //
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   return {
     dir: {
