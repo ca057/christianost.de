@@ -4,12 +4,18 @@
   src: url("/fonts/DepartureMono.woff2") format("woff2");
 }
 
+:root {
+  --color-dark: #212121;
+  --color-light: #fff;
+}
+
 html,
 body {
   height: 100%;
 }
 body {
-  color: #123123;
+  color: var(--color-dark);
+  background-color: var(--color-light);
   font-family: "DepartureMono", monospace;
   padding: 1em;
 }
@@ -27,4 +33,11 @@ p {
 }
 ul {
   list-style-type: square;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+  }
 }
