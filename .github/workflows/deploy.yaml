@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+
+name: "Deploy"
+on:
+  push:
+    branches: [main]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.9.0"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - run: |
+          npm ci
+          npm run build
+      - name: Deploy
+        uses: burnett01/rsync-deployments@7
+        with:
+          switches: "-avrh --delete"
+          path: "dist/"
+          remote_path: "/var/www/virtual/${{ vars.SSH_USERNAME }}/html"
+          remote_host: "${{ vars.SSH_HOST }}"
+          remote_user: "${{ vars.SSH_USERNAME }}"
+          remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+      - run: echo "deploy"
