@@ -27,4 +27,11 @@ layout: base.webc
     flex-direction: column;
     justify-content: space-between;
   }
+  h1 {
+    font-family: "DepartureMono", monospace;
+    font-size: 1.5em;
+  }
+  main {
+    padding-top: 2em;
+  }
 </style>
