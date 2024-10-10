@@ -31,7 +31,4 @@ layout: base.webc
     font-family: "DepartureMono", monospace;
     font-size: 1.5em;
   }
-  main {
-    padding-top: 2em;
-  }
 </style>
