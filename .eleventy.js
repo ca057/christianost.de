@@ -1,12 +1,15 @@
-import { bundle, browserslistToTargets, transform } from "lightningcss";
-import browserslist from "browserslist";
+// import { bundle, browserslistToTargets, transform } from "lightningcss";
+// import browserslist from "browserslist";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
+import { Temporal } from "temporal-polyfill";
 
 const environment =
   process.env.ELEVENTY_RUN_MODE === "serve" || process.env.ELEVENTY_RUN_MODE === "watch" ? "development" : "production";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginWebc);
+  eleventyConfig.addPlugin(pluginWebc, {
+    components: ["src/**/_components/**/*.webc"],
+  });
 
   eleventyConfig.addBundle("css");
   // eleventyConfig.addTemplateFormats("css");
@@ -50,6 +53,18 @@ export default function (eleventyConfig) {
   //
   //
   eleventyConfig.addPassthroughCopy("src/fonts");
+
+  eleventyConfig.addGlobalData("coffees", async () => {
+    // TODO: load this from externally
+
+    if (environment === "development") {
+      const now = Temporal.PlainDate.from(Temporal.Now.plainDateISO());
+
+      return Array.from({ length: 3451 }).map((_, i) => ({
+        day: now.subtract({ days: i }),
+      }));
+    }
+  });
 
   return {
     dir: {
