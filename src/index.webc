@@ -29,6 +29,6 @@ layout: base.webc
   }
   h1 {
     font-family: "DepartureMono", monospace;
-    font-size: 1.5em;
+    font-size: inherit;
   }
 </style>

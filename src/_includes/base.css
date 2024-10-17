@@ -53,6 +53,7 @@ p {
 }
 ul {
   list-style-type: square;
+  padding-inline-start: 1.5em;
 }
 
 @media (prefers-color-scheme: dark) {
