@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "DepartureMono";
-  font-display: swap;
-  src: url("/fonts/DepartureMono.woff2") format("woff2");
-}
-
 :root {
   --color-dark: #212121;
   --color-light: #fff;
@@ -39,11 +33,13 @@ main {
 }
 
 h1 {
-  font-weight: normal;
+  font-size: 1.5em;
+  font-weight: 500;
   margin-bottom: 0.5em;
 }
 h2 {
-  font-weight: normal;
+  font-weight: 500;
+  font-size: inherit;
   margin-bottom: 0.5em;
   margin-top: 1em;
 }

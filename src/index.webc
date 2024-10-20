@@ -28,7 +28,6 @@ layout: base.webc
     justify-content: space-between;
   }
   h1 {
-    font-family: "DepartureMono", monospace;
     font-size: inherit;
   }
 </style>
