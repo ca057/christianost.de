@@ -53,6 +53,7 @@ export default function (eleventyConfig) {
   //
   //
   eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy("src/favicon");
 
   eleventyConfig.addGlobalData("coffees", async () => {
     // TODO: load this from externally

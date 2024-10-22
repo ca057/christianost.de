@@ -1,8 +1,11 @@
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
     <title @text="coffees.length + ' coffees'"></title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- critical css references -->
     <link rel="stylesheet" href="../_includes/css-reset.css" />
@@ -45,7 +48,7 @@
 
       .coffees {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(max(200px, 25%), 300px), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(max(150px, 25%), 300px), 1fr));
         grid-gap: var(--spacing-1);
       }
       div.coffee {
