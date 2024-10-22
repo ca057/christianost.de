@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "rm -rf ./dist && npx @11ty/eleventy --serve",
-    "build": "rm -r ./dist && npx @11ty/eleventy"
+    "build": "rm -rf ./dist && npx @11ty/eleventy"
   },
   "type": "module",
   "dependencies": {
