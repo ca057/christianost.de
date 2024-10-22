@@ -18,7 +18,7 @@ jobs:
           npm ci
           npm run build
       - name: Deploy
-        uses: burnett01/rsync-deployments@7
+        uses: burnett01/rsync-deployments@7.0.1
         with:
           switches: "-avrh --delete"
           path: "dist/"
