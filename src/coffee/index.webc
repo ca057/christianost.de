@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title @text="coffees.length + ' coffees'"></title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- critical css references -->
+    <link rel="stylesheet" href="../_includes/css-reset.css" />
+    <!-- critical css bundle -->
+    <style @raw="getBundle('css')" webc:keep></style>
+    <!-- TODO: process the shit out of this CSS -->
+    <style webc:keep>
+      @font-face {
+        font-family: "DepartureMono";
+        font-display: swap;
+        src: url("/fonts/DepartureMono.woff2") format("woff2");
+      }
+      :root {
+        --spacing-1: 12px;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
+      body {
+        padding: var(--spacing-1);
+      }
+
+      h1 {
+        font-weight: normal;
+      }
+
+      .coffees {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(max(150px, 25%), 300px), 1fr));
+        grid-gap: var(--spacing-1);
+      }
+      div.coffee {
+        background-color: lightgray;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: calc(var(--spacing-1) / 2);
+      }
+
+      .numeric {
+        font-family: DepartureMono;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><span class="numeric" @text="coffees.length"></span> coffees</h1>
+    </header>
+    <main>
+      <p>
+        Since <span @text="coffees[coffees.length-1].day"></span> I take a picture of every coffee I drink,
+        <span class="numeric" @text="coffees.length"></span> in total until <span @text="coffees[0].day"></span>.
+      </p>
+      <div class="coffees">
+        <!-- <coffee-single webc:for="(coffee, index) of coffees" :@day="coffee.day" :@id="coffee.day"></coffee-single> -->
+        <div class="coffee" webc:for="(coffee, index) of coffees" :@day="coffee.day" :@id="coffee.day"></div>
+      </div>
+    </main>
+    <footer>
+      <p>by Christian Ost – last updated at <span @text="Date.now()"></span></p>
+    </footer>
+  </body>
+</html>

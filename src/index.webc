@@ -1,0 +1,33 @@
+---
+layout: base.webc
+---
+
+<main>
+  <h1>Christian Ost</h1>
+
+  <p>
+    I’m a software engineer based in Berlin. Previously, I worked for Forget Finance, Typeform and freelanced with SMO
+    GmbH among others for Vaillant GmbH and SPORT1.
+  </p>
+
+  <ul>
+    <li><a href="mailto:hallo@christianost.de">hallo@christianost.de</a></li>
+    <li><a href="https://github.com/ca057">ca057 on GitHub</a></li>
+    <li><a href="https://mstdn.social/@chrstnst">@chrstnst@mstdn.social on Mastodon</a></li>
+  </ul>
+</main>
+
+<footer>
+  <a href="/imprint">Imprint</a>
+</footer>
+
+<style webc:bucket="defer">
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  h1 {
+    font-size: inherit;
+  }
+</style>
