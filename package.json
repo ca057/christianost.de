@@ -2,8 +2,8 @@
   "name": "christianost.de",
   "private": true,
   "scripts": {
-    "start": "(rm -r ./dist || true) && npx @11ty/eleventy --serve",
-    "build": "(rm -r ./dist || true) && npx @11ty/eleventy"
+    "start": "rm -rf ./dist && npx @11ty/eleventy --serve",
+    "build": "rm -r ./dist && npx @11ty/eleventy"
   },
   "type": "module",
   "dependencies": {

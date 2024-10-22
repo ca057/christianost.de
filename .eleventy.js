@@ -58,13 +58,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("coffees", async () => {
     // TODO: load this from externally
 
-    if (environment === "development") {
-      const now = Temporal.PlainDate.from(Temporal.Now.plainDateISO());
+    //    if (environment === "development") {
+    const now = Temporal.PlainDate.from(Temporal.Now.plainDateISO());
 
-      return Array.from({ length: 3451 }).map((_, i) => ({
-        day: now.subtract({ days: i }),
-      }));
-    }
+    return Array.from({ length: 3451 }).map((_, i) => ({
+      day: now.subtract({ days: i }),
+    }));
+    //    }
   });
 
   return {
