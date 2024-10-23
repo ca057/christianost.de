@@ -22,8 +22,8 @@ jobs:
         with:
           switches: "-avrh --delete"
           path: "dist/"
-          remote_path: "/var/www/virtual/${{ vars.SSH_USERNAME }}/html"
-          remote_host: "${{ vars.SSH_HOST }}"
-          remote_user: "${{ vars.SSH_USERNAME }}"
+          remote_path: "/var/www/virtual/${{ secrets.SSH_USERNAME }}/html"
+          remote_host: "${{ secrets.SSH_HOST }}"
+          remote_user: "${{ secrets.SSH_USERNAME }}"
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
       - run: echo "deploy"
