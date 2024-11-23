@@ -51,11 +51,12 @@
         grid-template-columns: repeat(auto-fit, minmax(min(max(150px, 25%), 300px), 1fr));
         grid-gap: var(--spacing-1);
       }
-      div.coffee {
-        background-color: lightgray;
+      .coffees img {
         width: 100%;
+        height: 100%;
         aspect-ratio: 1 / 1;
         border-radius: calc(var(--spacing-1) / 2);
+        overflow: hidden;
       }
 
       .numeric {
@@ -69,12 +70,23 @@
     </header>
     <main>
       <p>
-        Since <span @text="coffees[coffees.length-1].day"></span> I take a picture of every coffee I drink,
-        <span class="numeric" @text="coffees.length"></span> in total until <span @text="coffees[0].day"></span>.
+        Since <span @text="coffees[0].day"></span> I take a picture of every coffee I drink,
+        <span class="numeric" @text="coffees.length"></span> in total until <span @text="coffees[coffees.length-1].day"></span>.
       </p>
       <div class="coffees">
         <!-- <coffee-single webc:for="(coffee, index) of coffees" :@day="coffee.day" :@id="coffee.day"></coffee-single> -->
-        <div class="coffee" webc:for="(coffee, index) of coffees" :@day="coffee.day" :@id="coffee.day"></div>
+        <img
+          webc:for="(coffee, index) of coffees"
+          :id="coffee.id"
+          :style="`background:${blurhashColorRgb(coffee.images.blurhash)};`"
+          alt=""
+          :src="`images/${coffee.images['300']}`"
+          width="300"
+          height="300"
+          loading="lazy"
+          decoding="async"
+        >
+        </img>
       </div>
     </main>
     <footer>
