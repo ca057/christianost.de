@@ -17,6 +17,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/**/images/*");
 
   eleventyConfig.addFilter("blurhashColorRgb", (blurhash) => `rgb(${getBlurHashAverageColor(blurhash).join(",")})`);
+  eleventyConfig.addFilter("formatDate", (date, lcoale = "en") => "foo")
 
   return {
     dir: {

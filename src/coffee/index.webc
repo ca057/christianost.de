@@ -53,7 +53,7 @@
         font-family: Knewave;
         font-weight: normal;
         font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
-        margin: clamp(1rem, -0.875em + 8.333vw, 2rem);
+        margin: clamp(3rem, -0.875rem + 8.333vw, 4rem) 1rem 1rem;
       }
       h1 span.numeric {
         font-size: 2em;
@@ -63,11 +63,13 @@
         font-size: 1.2rem;
         margin-bottom: 1.2rem;
       }
-
-      .info {
+      p.info {
         font-family: serif;
         font-size: clamp(0.75rem, -0.875rem + 4.333vw, 1rem);
         font-style: italic;
+      }
+      p.ta-right {
+        text-align: right;
       }
 
       .coffees {
@@ -94,8 +96,8 @@
       <h1><span class="numeric" @text="coffees.length"></span> coffees</h1>
     </header>
     <main>
-      <p class="info">
-        A picture of every coffee I drank since <span @text="coffees[0].day"></span>.
+      <p class="info ta-right">
+        A picture of every coffee I drank since <span @text="formatDate(coffees[0].day)"></span>.
       </p>
       <div class="coffees">
         <img
@@ -113,7 +115,7 @@
       </div>
     </main>
     <footer>
-      <p class="info">by <a href="/">Christian Ost</a> – last updated at <span @text="Date.now()"></span></p>
+      <p class="info">by <a href="/">Christian Ost</a> – last updated at <span @text="formatDate(Date.now())"></span></p>
     </footer>
   </body>
 </html>
