@@ -18,6 +18,11 @@
         font-display: swap;
         src: url("/fonts/DepartureMono.woff2") format("woff2");
       }
+      @font-face {
+        font-family: "Knewave";
+        font-display: swap;
+        src: url("/fonts/knewave.woff");
+      }
       :root {
         --spacing-1: 12px;
       }
@@ -40,16 +45,29 @@
       }
       body {
         padding: var(--spacing-1);
+        background-color: #fffdf6;
       }
 
       h1 {
+        font-family: Knewave;
         font-weight: normal;
+        font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
+        margin: clamp(1rem, -0.875em + 8.333vw, 2rem);
+      }
+      h1 span.numeric {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
       }
 
       .coffees {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(max(150px, 25%), 300px), 1fr));
         grid-gap: var(--spacing-1);
+        margin: 1rem auto;
       }
       .coffees img {
         width: 100%;
@@ -58,10 +76,6 @@
         border-radius: calc(var(--spacing-1) / 2);
         overflow: hidden;
       }
-
-      .numeric {
-        font-family: DepartureMono;
-      }
     </style>
   </head>
   <body>
@@ -69,10 +83,6 @@
       <h1><span class="numeric" @text="coffees.length"></span> coffees</h1>
     </header>
     <main>
-      <p>
-        Since <span @text="coffees[0].day"></span> I take a picture of every coffee I drink,
-        <span class="numeric" @text="coffees.length"></span> in total until <span @text="coffees[coffees.length-1].day"></span>.
-      </p>
       <div class="coffees">
         <!-- <coffee-single webc:for="(coffee, index) of coffees" :@day="coffee.day" :@id="coffee.day"></coffee-single> -->
         <img
@@ -90,6 +100,9 @@
       </div>
     </main>
     <footer>
+      <p>
+        A picture of every coffee I drank since <span @text="coffees[0].day"></span>.
+      </p>
       <p>by Christian Ost – last updated at <span @text="Date.now()"></span></p>
     </footer>
   </body>
