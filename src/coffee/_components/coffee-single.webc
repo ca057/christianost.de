@@ -1,9 +1,0 @@
-<div :id="id" @text="day"></div>
-
-<style>
-  div {
-    padding: 1em;
-    border: 1px solid #ccc;
-    margin: 1em;
-  }
-</style>

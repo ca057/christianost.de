@@ -46,6 +46,7 @@
       body {
         padding: var(--spacing-1);
         background-color: #fffdf6;
+        color: #040404;
       }
 
       h1 {
@@ -63,6 +64,12 @@
         margin-bottom: 1.2rem;
       }
 
+      .info {
+        font-family: serif;
+        font-size: clamp(0.75rem, -0.875rem + 4.333vw, 1rem);
+        font-style: italic;
+      }
+
       .coffees {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(max(150px, 25%), 300px), 1fr));
@@ -76,6 +83,10 @@
         border-radius: calc(var(--spacing-1) / 2);
         overflow: hidden;
       }
+
+      footer {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -83,8 +94,10 @@
       <h1><span class="numeric" @text="coffees.length"></span> coffees</h1>
     </header>
     <main>
+      <p class="info">
+        A picture of every coffee I drank since <span @text="coffees[0].day"></span>.
+      </p>
       <div class="coffees">
-        <!-- <coffee-single webc:for="(coffee, index) of coffees" :@day="coffee.day" :@id="coffee.day"></coffee-single> -->
         <img
           webc:for="(coffee, index) of coffees"
           :id="coffee.id"
@@ -100,10 +113,7 @@
       </div>
     </main>
     <footer>
-      <p>
-        A picture of every coffee I drank since <span @text="coffees[0].day"></span>.
-      </p>
-      <p>by Christian Ost – last updated at <span @text="Date.now()"></span></p>
+      <p class="info">by <a href="/">Christian Ost</a> – last updated at <span @text="Date.now()"></span></p>
     </footer>
   </body>
 </html>
