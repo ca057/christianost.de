@@ -97,11 +97,11 @@
   </head>
   <body>
     <header>
-      <h1><span class="numeric" @text="coffees.length"></span> coffees</h1>
+      <h1><span class="numeric" @text="coffees.images.length"></span> coffees</h1>
     </header>
     <main>
         <img
-          webc:for="(coffee, index) of coffees"
+          webc:for="(coffee, index) of coffees.images"
           :id="coffee.id"
           :style="`background:${blurhashColorRgb(coffee.images.blurhash)};`"
           alt=""
@@ -115,9 +115,9 @@
     </main>
     <footer>
       <p class="info">
-        A picture of every coffee I drank between <span @text="formatDate(coffees[0].day)"></span> and <span @text="formatDate(coffees[coffees.length-1].day)"></span>.
+        A picture of every coffee I drank between <span @text="formatDate(coffees.images[0].day)"></span> and <span @text="formatDate(coffees.images[coffees.images.length-1].day)"></span>.
       </p>
-      <p class="info footnote">by <a href="/">Christian Ost</a> – last updated on <span @text="formatDate((new Date()).toISOString().split('T')[0])"></span></p>
+      <p class="info footnote">by <a href="/">Christian Ost</a> – last updated on <span @text="formatDate(coffees.createdAt.split('T')[0])"></span></p>
     </footer>
   </body>
 </html>
