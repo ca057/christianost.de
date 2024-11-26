@@ -6,16 +6,6 @@ title: imprint
 <main>
   <h1>Imprint</h1>
 
-  <h2>Licenses</h2>
-  <ul>
-    <li>
-      <a href="https://departuremono.com/">Departure Mono</a> (<a
-        href="https://raw.githubusercontent.com/rektdeckard/departure-mono/refs/heads/main/public/assets/LICENSE"
-        >SIL OFL</a
-      >) by <a href="https://www.helenazhang.com/">Helena Zhang</a>
-    </li>
-  </ul>
-
   <h2>Data Privacy Information</h2>
   <p>
     This site does not use any form of personalised tracking. No personally identifying information is collected, no
