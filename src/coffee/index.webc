@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title @text="coffees.length + ' coffees'"></title>
+    <title @text="coffees.images.length + ' coffees'"></title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
