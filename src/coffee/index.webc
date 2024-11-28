@@ -96,6 +96,10 @@
         text-align: center;
         margin: var(--spacing-2);
       }
+
+      .nowrap {
+        white-space: nowrap;
+      }
     </style>
   </head>
   <body>
@@ -104,7 +108,7 @@
     </header>
     <main>
       <p class="info">
-        A picture of every coffee I drank between <span @text="formatDate(coffees.images[0].day)"></span> and <span @text="formatDate(coffees.images[coffees.images.length-1].day)"></span>.
+        A picture of every coffee I drank between <span class="nowrap" @text="formatDate(coffees.images[0].day)"></span> and <span class="nowrap" @text="formatDate(coffees.images[coffees.images.length-1].day)"></span>.
       </p>
       <div class="coffees">
         <img
@@ -122,7 +126,7 @@
       </div>
     </main>
     <footer>
-      <p class="info footnote">by <a href="/">Christian Ost</a> – last updated on <span @text="formatDate(coffees.createdAt.split('T')[0])"></span></p>
+      <p class="info footnote">by <a href="/">Christian Ost</a> – last updated on <span class="nowrap" @text="formatDate(coffees.createdAt.split('T')[0])"></span></p>
     </footer>
   </body>
 </html>
