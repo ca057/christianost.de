@@ -25,11 +25,7 @@
         --spacing-2: 2rem;
         --spacing-3: 3rem;
         --spacing-4: 4rem;
-      }
-      html,
-      body {
-        height: 100%;
-        font-family:
+        --font-family-serif:
           system-ui,
           -apple-system,
           BlinkMacSystemFont,
@@ -42,6 +38,11 @@
           "Helvetica Neue",
           sans-serif;
       }
+      html,
+      body {
+        height: 100%;
+        font-family: var(--font-family-serif);
+      }
       body {
         padding: var(--spacing-1);
         background-color: #fffdf6;
@@ -49,13 +50,13 @@
       }
 
       h1 {
-        font-family: Knewave;
+        font-family: Knewave, var(--font-family-serif);
         font-weight: normal;
         font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
         margin:
           clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-4))
           var(--spacing-1)
-          clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-3))
+          clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2))
         ;
       }
       h1 span.numeric {
@@ -67,7 +68,6 @@
         margin-bottom: 0.5rem;
       }
       p.info {
-        font-family: serif;
         font-style: italic;
       }
       p.footnote {
@@ -75,13 +75,16 @@
         color: #04040455;
       }
 
-      main {
+      main p.info {
+        margin: auto var(--spacing-1) clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
+      }
+      .coffees {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(max(50px, 25%), 300px), 1fr));
         grid-gap: var(--spacing-1);
         margin: 1rem auto;
       }
-      main img {
+      .coffees img {
         width: 100%;
         height: 100%;
         aspect-ratio: 1 / 1;
@@ -100,6 +103,10 @@
       <h1><span class="numeric" @text="coffees.images.length"></span> coffees</h1>
     </header>
     <main>
+      <p class="info">
+        A picture of every coffee I drank between <span @text="formatDate(coffees.images[0].day)"></span> and <span @text="formatDate(coffees.images[coffees.images.length-1].day)"></span>.
+      </p>
+      <div class="coffees">
         <img
           webc:for="(coffee, index) of coffees.images"
           :id="coffee.id"
@@ -112,11 +119,9 @@
           decoding="async"
         >
         </img>
+      </div>
     </main>
     <footer>
-      <p class="info">
-        A picture of every coffee I drank between <span @text="formatDate(coffees.images[0].day)"></span> and <span @text="formatDate(coffees.images[coffees.images.length-1].day)"></span>.
-      </p>
       <p class="info footnote">by <a href="/">Christian Ost</a> – last updated on <span @text="formatDate(coffees.createdAt.split('T')[0])"></span></p>
     </footer>
   </body>
