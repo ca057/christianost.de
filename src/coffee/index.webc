@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- TODO: favicon! -->
+    <link rel="preconnect" href="https://coffeedn.christianost.de" />
 
     <!-- critical css references -->
     <link rel="stylesheet" href="../_includes/css-reset.css" />
@@ -119,7 +120,7 @@
           :src="`https://coffeedn.christianost.de/${coffee.images['300']}`"
           width="300"
           height="300"
-          loading="lazy"
+          :loading="index < 10 ? 'eager' : 'lazy'"
           decoding="async"
         >
         </img>
