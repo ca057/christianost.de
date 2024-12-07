@@ -7,7 +7,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.1",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "fast-blurhash": "^1.1.4"
   },
