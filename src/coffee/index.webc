@@ -3,6 +3,8 @@
 <html lang="en">
   <head>
     <title @text="coffees.images.length + ' coffees'"></title>
+    <meta name="description" :content="`A picture of every coffee I drank between ${formatDate(coffees.images[coffees.images.length-1].day)} and ${formatDate(coffees.images[0].day)}.`" />
+    <meta name="author" content="Christian Ost" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,10 +12,10 @@
     <!-- TODO: favicon! -->
     <link rel="preconnect" href="https://coffeedn.christianost.de" />
 
-    <!-- critical css references -->
-    <link rel="stylesheet" href="../_includes/css-reset.css" />
     <!-- critical css bundle -->
+    <link rel="stylesheet" href="../_includes/css-reset.css" />
     <style @raw="getBundle('css')" webc:keep></style>
+
     <!-- TODO: process the shit out of this CSS -->
     <style webc:keep>
       @font-face {
