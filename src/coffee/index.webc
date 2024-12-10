@@ -76,6 +76,7 @@
       }
 
       p#explainer {
+        font-style: italic;
         margin: auto var(--spacing-1) clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
       }
       .coffees {
