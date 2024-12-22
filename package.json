@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "browserslist": "^4.24.0",
+    "eleventy-plugin-gen-favicons": "^1.1.3",
     "lightningcss": "^1.27.0",
     "temporal-polyfill": "^0.2.5"
   }

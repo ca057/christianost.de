@@ -7,20 +7,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+    <!-- <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest" /> -->
 
-    <!-- critical css references -->
-    <link rel="stylesheet" href="css-reset.css" />
-    <link rel="stylesheet" href="base.css" />
+    {% favicons "src/_favicon.svg" %}
     <!-- critical css bundle -->
-    <style @raw="getBundle('css')" webc:keep></style>
+    {% capture css %}
+      {% include "css-reset.css" %}
+      {% include "base.css" %}
+      {% getBundle "css" %}
+    {% endcapture %}
+    <!-- -- TODO: minify -->
+    <style>{{ css }}</style>
 
     <!-- non-critical css -->
-    <link rel="stylesheet" :href="getBundleFileUrl('css', 'defer')" webc:keep />
+    <link rel="stylesheet" href="{% getBundleFileUrl 'css' 'defer' %}" />
   </head>
-  <body @raw="content"></body>
+  <body>{{ content }}</body>
 </html>

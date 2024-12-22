@@ -1,13 +1,12 @@
 ---
-layout: base.webc
+layout: base.liquid
 ---
 
 <main>
   <h1>Christian Ost</h1>
 
   <p>
-    I’m a software engineer based in Berlin. Previously, I worked for Forget Finance, Typeform and freelanced with SMO
-    GmbH among others for Vaillant GmbH and SPORT1.
+    I’m a software engineer based in Berlin. Previously I worked for Forget Finance, Typeform and freelanced among others for Vaillant GmbH and SPORT1.
   </p>
 
   <ul>
