@@ -1,5 +1,5 @@
 ---
-layout: base.liquid
+layout: base.vto
 ---
 
 <main>
@@ -20,13 +20,13 @@ layout: base.liquid
   <a href="/imprint">Imprint</a>
 </footer>
 
-<style webc:bucket="defer">
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  h1 {
-    font-size: inherit;
-  }
-</style>
+{{ css }}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h1 {
+  font-size: inherit;
+}
+{{ /css }}

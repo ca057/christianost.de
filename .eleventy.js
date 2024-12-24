@@ -1,8 +1,8 @@
 // import { bundle, browserslistToTargets, transform } from "lightningcss";
 // import browserslist from "browserslist";
 // TODO: remove it
-import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginFavicon from "eleventy-plugin-gen-favicons"
+import { VentoPlugin } from "eleventy-plugin-vento"
 import { decodeBlurHash, getBlurHashAverageColor } from "fast-blurhash";
 import sharp from "sharp";
 import { Temporal } from "temporal-polyfill";
@@ -30,12 +30,10 @@ async function blurhashToFavicon(blurHash, outputPath) {
 }
 
 export default async function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginWebc, {
-    components: ["src/**/_components/**/*.webc"],
-  });
   eleventyConfig.addPlugin(pluginFavicon, {
     outputDir: "dist"
   })
+  eleventyConfig.addPlugin(VentoPlugin)
 
   eleventyConfig.addBundle("css");
   eleventyConfig.addPassthroughCopy("src/_fonts");

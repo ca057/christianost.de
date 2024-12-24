@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Christian Ost</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ favicons "src/_favicon.svg" }}
+
+    <style>
+      {{ include "./css-reset.css" }}
+      {{ include "./base.css" }}
+      {{ getBundle "css" }}
+    </style>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>
