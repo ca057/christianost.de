@@ -1,0 +1,70 @@
+<!doctype html>
+
+{{ set first_coffee = coffees.images.at(0) }}
+{{ set last_coffee = coffees.images.at(-1) }}
+
+<html lang="en">
+  <head>
+    <title>
+      {{ coffees.images.length }}
+      coffees
+    </title>
+
+    <meta
+      name="description"
+      content="A picture of every coffee I drank between {{ first_coffee.day |> formatDate }} and {{ last_coffee.day |> formatDate }}."
+    >
+    <meta name="author" content="Christian Ost">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: favicon! -->
+    <link rel="preconnect" href="https://coffeedn.christianost.de">
+
+    <style>
+      {{ include "css-reset.css" }}
+      {{ include "./index.css" }}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span class="numeric">{{ coffees.images.length }}</span>
+        coffees
+      </h1>
+    </header>
+    <main>
+      <p id="explainer">
+        A picture of every coffee I drank between
+        <span class="nowrap">{{ first_coffee.day |> formatDate }}</span>
+        and
+        <span class="nowrap">{{ last_coffee.day |> formatDate }}</span>.
+      </p>
+      <div class="coffees">
+        {{ set allCoffees = coffees.images.toReversed() }}
+        {{ for index of allCoffees.length }}
+          {{ set coffee = allCoffees[index-1] }}
+          <img
+            id="{{ coffee.id }}"
+            style="background: {{ coffee.images.blurhash |> blurhashColorRgb }}"
+            src="https://coffeedn.christianost.de/{{ coffee.images['300'] }}"
+            width="300"
+            height="300"
+            loading="{{ (index - 1) < 10 ? 'eager' : 'lazy' }}"
+            decoding="async"
+          >
+          </img>
+        {{ /for }}
+      </div>
+    </main>
+    <footer>
+      <p class="info footnote">
+        by
+        <a href="/">Christian Ost</a>
+        – last updated on
+        <span class="nowrap">{{ coffees.createdAt.split("T").at(0) |> formatDate }}</span>
+      </p>
+    </footer>
+  </body>
+</html>

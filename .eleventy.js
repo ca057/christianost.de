@@ -26,7 +26,7 @@ async function blurhashToFavicon(blurHash, outputPath) {
       height: size,
       channels: 4
     }
-  }).toFormat("png").toFile("./faaaaa.png")
+  }).toFormat("png").toFile(outputPath)
 }
 
 export default async function (eleventyConfig) {
@@ -45,7 +45,7 @@ export default async function (eleventyConfig) {
 
   const coffees = await readFile("src/_data/coffees.json", { encoding: "utf-8" }).then(f => JSON.parse(f))
   // TODO: use zod or similar
-  await blurhashToFavicon(coffees.images[0].images.blurhash)
+  await blurhashToFavicon(coffees.images[0].images.blurhash, "src/coffee/favicon.png")
 
   return {
     dir: {
