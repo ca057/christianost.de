@@ -1,7 +1,7 @@
 <!doctype html>
 
-{{ set first_coffee = coffees.images.at(0) }}
-{{ set last_coffee = coffees.images.at(-1) }}
+{{ set firstCoffee = coffees.images.at(0) }}
+{{ set lastCoffee = coffees.images.at(-1) }}
 
 <html lang="en">
   <head>
@@ -12,7 +12,7 @@
 
     <meta
       name="description"
-      content="A picture of every coffee I drank between {{ first_coffee.day |> formatDate }} and {{ last_coffee.day |> formatDate }}."
+      content="A picture of every coffee I drank between {{ firstCoffee.day |> formatDate }} and {{ lastCoffee.day |> formatDate }}."
     >
     <meta name="author" content="Christian Ost">
 
@@ -37,9 +37,9 @@
     <main>
       <p id="explainer">
         A picture of every coffee I drank between
-        <span class="nowrap">{{ first_coffee.day |> formatDate }}</span>
+        <span class="nowrap">{{ firstCoffee.day |> formatDate }}</span>
         and
-        <span class="nowrap">{{ last_coffee.day |> formatDate }}</span>.
+        <span class="nowrap">{{ lastCoffee.day |> formatDate }}</span>.
       </p>
       <div class="coffees">
         {{ set allCoffees = coffees.images.toReversed() }}
