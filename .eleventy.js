@@ -1,6 +1,5 @@
 // import { bundle, browserslistToTargets, transform } from "lightningcss";
 // import browserslist from "browserslist";
-// TODO: remove it
 import pluginFavicon from "eleventy-plugin-gen-favicons"
 import { VentoPlugin } from "eleventy-plugin-vento"
 import { decodeBlurHash, getBlurHashAverageColor } from "fast-blurhash";
@@ -44,7 +43,6 @@ export default async function (eleventyConfig) {
   })
 
   const coffees = await readFile("src/_data/coffees.json", { encoding: "utf-8" }).then(f => JSON.parse(f))
-  // TODO: use zod or similar
   await blurhashToFavicon(coffees.images[0].images.blurhash, "src/coffee/favicon.png")
 
   return {
