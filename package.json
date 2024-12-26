@@ -18,5 +18,9 @@
     "sharp": "^0.33.5",
     "superstruct": "^2.0.2",
     "temporal-polyfill": "^0.2.5"
+  },
+  "devDependencies": {
+    "@sardine/eleventy-plugin-tinycss": "^2.0.0",
+    "@sardine/eleventy-plugin-tinyhtml": "^0.2.0"
   }
 }

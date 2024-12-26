@@ -1,6 +1,7 @@
 // import { bundle, browserslistToTargets, transform } from "lightningcss";
 // import browserslist from "browserslist";
-import pluginFavicon from "eleventy-plugin-gen-favicons";
+import tinyCSS from "@sardine/eleventy-plugin-tinycss";
+import tinyHTML from "@sardine/eleventy-plugin-tinyhtml";
 import { VentoPlugin } from "eleventy-plugin-vento";
 import { decodeBlurHash, getBlurHashAverageColor } from "fast-blurhash";
 import sharp from "sharp";
@@ -33,9 +34,6 @@ async function blurhashToFavicon(blurHash, outputPath) {
 }
 
 export default async function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginFavicon, {
-    outputDir: "dist",
-  });
   eleventyConfig.addPlugin(VentoPlugin);
 
   const coffees = await readFile("src/_data/coffees.json", { encoding: "utf-8" }).then((f) => JSON.parse(f));
@@ -51,6 +49,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("formatDate", (date, locale = "en-UK") => {
     return Temporal.PlainDate.from(date).toLocaleString(locale, { calendar: "gregory", dateStyle: "long" });
   });
+
+  eleventyConfig.addPlugin(tinyCSS);
+  eleventyConfig.addPlugin(tinyHTML);
 
   return {
     dir: {
