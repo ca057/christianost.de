@@ -1,6 +1,6 @@
 import favicons from "favicons";
 import { parse } from "node-html-parser";
-import { lstat, readdir, readFile, writeFile } from "node:fs/promises";
+import { lstat, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { object, optional, string } from "superstruct";
 
@@ -146,7 +146,7 @@ export default async function multipleFaviconsPlugin(eleventyConfig, pluginOptio
     const outputPath = configKey.replace(inputDir, outputDir);
     for (const f of [...images, ...files]) {
       // TODO write images & files lazy
-      writeFile(path.join(outputPath, f.name), f.contents);
+      mkdir(outputPath, { recursive: true }).then(() => writeFile(path.join(outputPath, f.name), f.contents));
     }
 
     return root.toString();

@@ -1,12 +1,10 @@
-// import { bundle, browserslistToTargets, transform } from "lightningcss";
-// import browserslist from "browserslist";
 import tinyCSS from "@sardine/eleventy-plugin-tinycss";
 import tinyHTML from "@sardine/eleventy-plugin-tinyhtml";
 import { VentoPlugin } from "eleventy-plugin-vento";
 import { decodeBlurHash, getBlurHashAverageColor } from "fast-blurhash";
 import sharp from "sharp";
 import { Temporal } from "temporal-polyfill";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import pluginMultipleFavicons from "./eleventy-plugin-multiple-favicons.js";
 
 const environment =
@@ -33,13 +31,15 @@ async function blurhashToFavicon(blurHash, outputPath) {
     .toFile(outputPath);
 }
 
-export default async function (eleventyConfig) {
-  eleventyConfig.addPlugin(VentoPlugin);
-
+async function createCoffeeFavicon() {
+  // TODO: lazy!
   const coffees = await readFile("src/_data/coffees.json", { encoding: "utf-8" }).then((f) => JSON.parse(f));
-  await blurhashToFavicon(coffees.images[0].images.blurhash, "src/coffee/favicon.png");
+  await blurhashToFavicon(coffees.images.at(-1).images.blurhash, "src/coffee/_favicon.png");
+}
 
-  await eleventyConfig.addPlugin(pluginMultipleFavicons, { configNamePattern: /_favicon\.json/ });
+export default async function (eleventyConfig) {
+  await createCoffeeFavicon();
+
   eleventyConfig.addWatchTarget("src/**/_favicon.json");
 
   eleventyConfig.addBundle("css");
@@ -50,8 +50,13 @@ export default async function (eleventyConfig) {
     return Temporal.PlainDate.from(date).toLocaleString(locale, { calendar: "gregory", dateStyle: "long" });
   });
 
-  eleventyConfig.addPlugin(tinyCSS);
-  eleventyConfig.addPlugin(tinyHTML);
+  eleventyConfig.addPlugin(VentoPlugin);
+  await eleventyConfig.addPlugin(pluginMultipleFavicons, { configNamePattern: /_favicon\.json/ });
+
+  if (environment === "production") {
+    eleventyConfig.addPlugin(tinyCSS);
+    eleventyConfig.addPlugin(tinyHTML);
+  }
 
   return {
     dir: {
