@@ -1,0 +1,13 @@
+{
+  "source": "_favicon.svg",
+  "config": {
+    "icons": {
+      "android": true,
+      "appleIcon": true,
+      "appleStartup": false,
+      "favicons": true,
+      "windows": false,
+      "yandex": true
+    }
+  }
+}
