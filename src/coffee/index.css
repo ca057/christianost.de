@@ -9,18 +9,8 @@
   --spacing-2: 2rem;
   --spacing-3: 3rem;
   --spacing-4: 4rem;
-  --font-family-serif:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  --font-family-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html,
@@ -39,8 +29,8 @@ h1 {
   font-family: Knewave, var(--font-family-serif);
   font-weight: normal;
   font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
-  margin:
-    clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-4)) var(--spacing-1) clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
+  margin: clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-4)) var(--spacing-1)
+    clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
 }
 
 h1 span.numeric {
@@ -48,13 +38,15 @@ h1 span.numeric {
 }
 
 p {
-  font-family: Charter, Bitstream Charter, serif;
+  font-family:
+    Charter,
+    Bitstream Charter,
+    serif;
   margin-bottom: 0.5rem;
 }
 
 p.footnote {
   font-size: 0.8rem;
-  color: #04040455;
 }
 
 p#explainer {
