@@ -20,7 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="preconnect" href="https://c.christianost.de">
-    <link rel="preload" href="/_fonts/knewave.woff" as="font" />
 
     <style>
       {{ include "css-reset.css" }}
@@ -53,6 +52,7 @@
             height="300"
             loading="{{ (index - 1) < 10 ? 'eager' : 'lazy' }}"
             decoding="async"
+            alt="TODO"
           >
           </img>
         {{ /for }}
