@@ -76,3 +76,8 @@ footer {
 .nowrap {
   white-space: nowrap;
 }
+
+.coffees img:hover,
+.coffees img:active {
+  border: 2px solid blue;
+}

@@ -42,12 +42,33 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("src/**/_favicon.json");
 
+  eleventyConfig.addWatchTarget("src/**/*.css");
   eleventyConfig.addBundle("css");
+  eleventyConfig.addWatchTarget("src/**/*.js");
+  eleventyConfig.addBundle("js");
   eleventyConfig.addPassthroughCopy("src/_fonts");
 
   eleventyConfig.addFilter("blurhashColorRgb", (blurhash) => `rgb(${getBlurHashAverageColor(blurhash).join(",")})`);
   eleventyConfig.addFilter("formatDate", (date, locale = "en-UK") => {
     return Temporal.PlainDate.from(date).toLocaleString(locale, { calendar: "gregory", dateStyle: "long" });
+  });
+  eleventyConfig.addFilter("formatOrdinals", (count) => {
+    // copied from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules
+    const enOrdinalRules = new Intl.PluralRules("en-EN", { type: "ordinal" });
+
+    const suffixes = new Map([
+      ["one", "st"],
+      ["two", "nd"],
+      ["few", "rd"],
+      ["other", "th"],
+    ]);
+    const formatOrdinals = (n) => {
+      const rule = enOrdinalRules.select(n);
+      const suffix = suffixes.get(rule);
+      return `${n}${suffix}`;
+    };
+
+    return formatOrdinals(count);
   });
 
   eleventyConfig.addPlugin(VentoPlugin);
