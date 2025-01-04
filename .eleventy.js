@@ -49,27 +49,27 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/_fonts");
 
   eleventyConfig.addFilter("blurhashColorRgb", (blurhash) => `rgb(${getBlurHashAverageColor(blurhash).join(",")})`);
-  eleventyConfig.addFilter("formatDate", (date, locale = "en-UK") => {
-    return Temporal.PlainDate.from(date).toLocaleString(locale, { calendar: "gregory", dateStyle: "long" });
-  });
-  eleventyConfig.addFilter("formatOrdinals", (count) => {
-    // copied from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules
-    const enOrdinalRules = new Intl.PluralRules("en-EN", { type: "ordinal" });
 
-    const suffixes = new Map([
-      ["one", "st"],
-      ["two", "nd"],
-      ["few", "rd"],
-      ["other", "th"],
-    ]);
-    const formatOrdinals = (n) => {
-      const rule = enOrdinalRules.select(n);
-      const suffix = suffixes.get(rule);
-      return `${n}${suffix}`;
-    };
+  const dateCache = {};
+  eleventyConfig.addFilter(
+    "formatDate",
+    (date, locale = "en-UK") =>
+      dateCache[date] ||
+      (dateCache[date] = Temporal.PlainDate.from(date).toLocaleString(locale, {
+        calendar: "gregory",
+        dateStyle: "long",
+      })),
+  );
 
-    return formatOrdinals(count);
-  });
+  // copied from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules
+  const enOrdinalRules = new Intl.PluralRules("en-EN", { type: "ordinal" });
+  const suffixes = new Map([
+    ["one", "st"],
+    ["two", "nd"],
+    ["few", "rd"],
+    ["other", "th"],
+  ]);
+  eleventyConfig.addFilter("formatOrdinals", (count) => `${count}${suffixes.get(enOrdinalRules.select(count))}`);
 
   eleventyConfig.addPlugin(VentoPlugin);
   await eleventyConfig.addPlugin(pluginMultipleFavicons, { configNamePattern: /_favicon\.json/ });
