@@ -77,12 +77,12 @@ footer {
   margin: var(--spacing-2);
 }
 
-.nowrap {
+.nw {
   white-space: nowrap;
 }
 
-.coffees {
-  .date {
+.c {
+  .d {
     opacity: 0;
     position: absolute;
     bottom: 0;
@@ -95,10 +95,10 @@ footer {
     align-items: flex-end;
   }
 
-  .date:hover {
+  .d:hover {
     opacity: 1;
   }
-  .date p {
+  .d p {
     margin: 0;
     font-family: monospace;
   }

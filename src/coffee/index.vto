@@ -42,11 +42,11 @@
     <main>
       <p id="explainer">
         A picture of every coffee I drank between
-        <span class="nowrap">{{ firstCoffee.day |> formatDate }}</span>
+        <span class="nw">{{ firstCoffee.day |> formatDate }}</span>
         and
-        <span class="nowrap">{{ lastCoffee.day |> formatDate }}</span>.
+        <span class="nw">{{ lastCoffee.day |> formatDate }}</span>.
       </p>
-      <div class="coffees">
+      <div class="c">
         {{ set allCoffees = coffees.images.toReversed() }}
         {{ for index of allCoffees.length }}
           {{ set coffee = allCoffees[index-1] }}
@@ -60,10 +60,10 @@
               height="300"
               loading="{{ (index - 1) < 10 ? 'eager' : 'lazy' }}"
               decoding="async"
-              alt="My {{ countOfDay  |> formatOrdinals }} coffee from {{ coffee.day |> formatDate }}."
+              alt="My {{ countOfDay  |> formatOrdinals }} coffee of {{ coffee.day |> formatDate }}."
             >
             </img>
-            <div class="date">
+            <div class="d">
               <p>{{ coffee.day }}</p>
             </div>
           </div>
@@ -75,7 +75,7 @@
         by
         <a href="/">Christian Ost</a>
         – last updated on
-        <span class="nowrap">{{ coffees.createdAt.split("T").at(0) |> formatDate }}</span>
+        <span class="nw">{{ coffees.createdAt.split("T").at(0) |> formatDate }}</span>
       </p>
     </footer>
   </body>
