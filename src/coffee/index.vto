@@ -51,18 +51,23 @@
         {{ for index of allCoffees.length }}
           {{ set coffee = allCoffees[index-1] }}
           {{ set countOfDay = Number(coffee.id.slice(8)) + 1 }}
-          <img
-            id="{{ coffee.id }}"
-            style="background: {{ coffee.images.blurhash |> blurhashColorRgb }}"
-            src="https://c.christianost.de/{{ coffee.images['300'] }}"
-            width="300"
-            height="300"
-            loading="{{ (index - 1) < 10 ? 'eager' : 'lazy' }}"
-            decoding="async"
-            alt="My {{ countOfDay  |> formatOrdinals }} coffee from {{ coffee.day |> formatDate }}."
-          >
-          </img>
-        {{ /for }}
+          <div>
+            <img
+              id="{{ coffee.id }}"
+              style="background: {{ coffee.images.blurhash |> blurhashColorRgb }}"
+              src="https://c.christianost.de/{{ coffee.images['300'] }}"
+              width="300"
+              height="300"
+              loading="{{ (index - 1) < 10 ? 'eager' : 'lazy' }}"
+              decoding="async"
+              alt="My {{ countOfDay  |> formatOrdinals }} coffee from {{ coffee.day |> formatDate }}."
+            >
+            </img>
+            <div class="date">
+              <p>{{ coffee.day }}</p>
+            </div>
+          </div>
+          {{ /for }}
       </div>
     </main>
     <footer>

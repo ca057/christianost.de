@@ -40,6 +40,10 @@ async function createCoffeeFavicon() {
 export default async function (eleventyConfig) {
   await createCoffeeFavicon();
 
+  eleventyConfig.setServerOptions({
+    showAllHosts: true,
+  });
+
   eleventyConfig.addWatchTarget("src/**/_favicon.json");
 
   eleventyConfig.addWatchTarget("src/**/*.css");
