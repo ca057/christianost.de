@@ -54,17 +54,17 @@ p#explainer {
   margin: auto var(--spacing-1) clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
 }
 
-.coffees {
+.c {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(max(50px, 25%), 300px), 1fr));
   grid-gap: var(--spacing-1);
 }
 
-.coffees div {
+.c div {
   position: relative;
 }
 
-.coffees img {
+.c img {
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1;
@@ -82,7 +82,7 @@ footer {
 }
 
 .c {
-  .d {
+  img + div {
     opacity: 0;
     position: absolute;
     bottom: 0;
@@ -95,10 +95,10 @@ footer {
     align-items: flex-end;
   }
 
-  .d:hover {
+  img + div:hover {
     opacity: 1;
   }
-  .d p {
+  img + div p {
     margin: 0;
     font-family: monospace;
   }
