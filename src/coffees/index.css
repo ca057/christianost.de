@@ -95,7 +95,7 @@ footer {
     align-items: flex-end;
   }
 
-  img + div:hover {
+  img + div:hover:not(body:hover) {
     opacity: 1;
   }
   img + div p {
