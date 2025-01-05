@@ -1,7 +1,7 @@
 {
   "source": "_favicon.png",
   "config": {
-    "path": "coffee/",
+    "path": "coffees/",
     "icons": {
       "android": false,
       "appleIcon": false,
