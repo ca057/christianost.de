@@ -72,19 +72,9 @@ p#explainer {
   overflow: hidden;
 }
 
-footer {
-  text-align: center;
-  margin: var(--spacing-2);
-}
-
-.nw {
-  white-space: nowrap;
-}
-
 .c {
   img + div {
-    background-color: red;
-    opacity: 0.5;
+    opacity: 0;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -103,4 +93,13 @@ footer {
     margin: 0;
     font-family: monospace;
   }
+}
+
+footer {
+  text-align: center;
+  margin: var(--spacing-2);
+}
+
+.nw {
+  white-space: nowrap;
 }
