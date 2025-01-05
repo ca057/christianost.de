@@ -34,7 +34,7 @@ async function blurhashToFavicon(blurHash, outputPath) {
 async function createCoffeeFavicon() {
   // TODO: lazy!
   const coffees = await readFile("src/_data/coffees.json", { encoding: "utf-8" }).then((f) => JSON.parse(f));
-  await blurhashToFavicon(coffees.images.at(-1).images.blurhash, "src/coffee/_favicon.png");
+  await blurhashToFavicon(coffees.images.at(-1).images.blurhash, "src/coffees/_favicon.png");
 }
 
 export default async function (eleventyConfig) {
