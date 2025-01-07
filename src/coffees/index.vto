@@ -44,7 +44,7 @@
         {{ set allCoffees = coffees.images.toReversed() }}
         {{ for index of allCoffees.length }}
           {{ set coffee = allCoffees[index-1] }}
-          {{ set countOfDay = Number(coffee.id.slice(8)) + 1 }}
+          {{ set countOfDay = Number(coffee.id.slice(8)) }}
           <div>
             <img
               id="{{ coffee.id }}"
@@ -54,10 +54,11 @@
               height="300"
               loading="{{ (index - 1) < 10 ? 'eager' : 'lazy' }}"
               decoding="async"
-              alt="My {{ countOfDay  |> formatOrdinals }} coffee of {{ coffee.day |> formatDate }}."
+              alt="My {{ (countOfDay + 1)  |> formatOrdinals }} coffee of {{ coffee.day |> formatDate }}."
             >
             </img>
             <div>
+              <p>#{{ countOfDay }}</p>
               <p>{{ coffee.day.split("-").reverse().join(" ") }}</p>
             </div>
           </div>

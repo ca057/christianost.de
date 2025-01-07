@@ -4,6 +4,12 @@
   src: url("/_fonts/knewave.woff");
 }
 
+@font-face {
+  font-family: "Departure Mono";
+  font-display: swap;
+  src: url("/_fonts/departuremono.woff2") format("woff2");
+}
+
 :root {
   --spacing-1: 1rem;
   --spacing-2: 2rem;
@@ -82,8 +88,10 @@ p#explainer {
     height: 100%;
     transition: opacity 200ms;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    padding: 10%;
   }
 
   img + div:hover {
@@ -91,7 +99,13 @@ p#explainer {
   }
   img + div p {
     margin: 0;
-    font-family: monospace;
+    font-family:
+      Departure Mono,
+      monospace;
+    color: orange;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 5px orange;
   }
 }
 
