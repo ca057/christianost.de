@@ -1,6 +1,7 @@
 {
   "source": "_favicon.svg",
   "config": {
+    "start_url": "",
     "icons": {
       "android": true,
       "appleIcon": true,
