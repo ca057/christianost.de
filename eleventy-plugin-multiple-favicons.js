@@ -116,7 +116,7 @@ export default async function multipleFaviconsPlugin(eleventyConfig, pluginOptio
           [path.dirname(curr)]: {
             originalPath: curr,
             base: path.dirname(curr),
-            favicons: await favicons(path.join(path.dirname(curr), source), config),
+            favicons: await favicons(path.resolve(path.dirname(curr), source), config),
           },
         };
       }),
