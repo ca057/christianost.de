@@ -2,6 +2,7 @@
   "source": "_favicon.png",
   "config": {
     "path": "coffees/",
+    "start_url": "",
     "icons": {
       "android": false,
       "appleIcon": false,
