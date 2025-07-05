@@ -14,14 +14,14 @@
   --spacing-1: 1rem;
   --spacing-2: 2rem;
   --spacing-4: 4rem;
-  --font-family-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+  --font-family-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html,
 body {
   min-height: 100%;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-sans-serif);
 }
 
 body {
@@ -72,15 +72,19 @@ p#explainer {
   position: relative;
 }
 
-.c img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: calc(var(--spacing-1) / 4);
-  overflow: hidden;
-}
-
 .c {
+  img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: calc(var(--spacing-1) / 8);
+    overflow: hidden;
+  }
+  img[alt] {
+    padding: clamp(var(--spacing-1) / 4, 2.4vw, var(--spacing-1));
+    text-wrap: balance;
+  }
+
   img + div {
     opacity: 0;
     position: absolute;
