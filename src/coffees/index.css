@@ -25,7 +25,7 @@ body {
 }
 
 body {
-  padding: 0 var(--spacing-1);
+  padding: 0 var(--spacing-2);
   background-color: #fffdf6;
   color: #040404;
 }
@@ -34,7 +34,7 @@ h1 {
   font-family: Knewave, var(--font-family-serif);
   font-weight: normal;
   font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
-  margin: clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-4)) var(--spacing-1)
+  margin: clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-4)) 0
     clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
 }
 
@@ -43,11 +43,8 @@ h1 span.numeric {
 }
 
 p {
-  font-family:
-    Charter,
-    Bitstream Charter,
-    serif;
   margin-bottom: 0.5rem;
+  font-size: 0.8rem;
 }
 
 p.footnote {
@@ -55,14 +52,20 @@ p.footnote {
 }
 
 p#explainer {
+  font-family:
+    Charter,
+    Bitstream Charter,
+    serif;
+  font-size: inherit;
   font-style: italic;
-  margin: auto var(--spacing-1) clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
+  margin: auto 0 clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
+  text-wrap: balance;
 }
 
 .c {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(max(50px, 25%), 300px), 1fr));
-  grid-gap: var(--spacing-1);
+  grid-gap: clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
 }
 
 .c div {
@@ -111,7 +114,6 @@ p#explainer {
 }
 
 footer {
-  text-align: center;
   margin: var(--spacing-2);
 }
 
