@@ -33,13 +33,12 @@ body {
 h1 {
   font-family: Knewave, var(--font-family-serif);
   font-weight: normal;
-  font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
-  margin: clamp(var(--spacing-2), -0.875rem + 8.333vw, var(--spacing-4)) 0
-    clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
+  font-size: clamp(2.5rem, -0.875rem + 8.333vw, 4rem);
+  margin: var(--spacing-4) 0 var(--spacing-2);
 }
 
 h1 span.numeric {
-  font-size: 2em;
+  font-size: 1.25em;
 }
 
 p {
@@ -48,6 +47,7 @@ p {
 }
 
 p.footnote {
+  text-align: center;
   font-size: 0.8rem;
 }
 
@@ -58,7 +58,7 @@ p#explainer {
     serif;
   font-size: inherit;
   font-style: italic;
-  margin: auto 0 clamp(var(--spacing-1), -0.875rem + 8.333vw, var(--spacing-2));
+  margin: auto 0 var(--spacing-2);
   text-wrap: balance;
 }
 
